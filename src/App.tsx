@@ -3,14 +3,15 @@ import './App.css'
 import { ModeToggle } from '@/components/mode-toggle'
 import { ThemeProvider } from '@/components/theme-provider'
 import { AspectRatio } from '@/components/ui/aspect-ratio'
-// import { Button } from './components/ui/button'
+import { Button } from './components/ui/button'
 import { ButtonIcon } from '@/components/ui/button-icon'
 import { ProjectCard } from './components/ui/projects'
-import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from './components/ui/navigation-menu'
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from './components/ui/navigation-menu'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './components/ui/card'
 import { SectionCard } from './components/ui/section-card'
-import { Divide } from 'lucide-react'
 import { Skill } from './components/ui/skill'
+import { Separator } from './components/ui/separator'
+import { ChevronUp } from 'lucide-react'
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <ModeToggle />
+
 
       <AspectRatio ratio={1} className="w-12 mx-auto">
         <img
@@ -43,14 +45,37 @@ function App() {
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            {/* <NavigationMenuTrigger>Item One</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <NavigationMenuLink>Link</NavigationMenuLink>
-            </NavigationMenuContent> */}
-            <NavigationMenuLink>Link</NavigationMenuLink>
+            <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+              <a href="#skills">Home</a>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+          <Separator orientation='vertical' />
+          <NavigationMenuItem>
+            <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+              <a href="#experience">Experience</a>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+              <a href="#education">Education</a>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+              <a href="#skills">Skills</a>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+              <a href="#projects">Projects</a>
+            </NavigationMenuLink>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
+
+      <Button variant="outline" size={'icon-xl'} className='fixed bottom-4 right-4 '>
+        <ChevronUp size={32} />
+      </Button>
 
       <Card>
         <CardContent>
@@ -64,6 +89,16 @@ function App() {
       </Card>
 
       <SectionCard
+        id='about'
+        title="About Me"
+      >
+        <CardDescription>
+          Hello! I'm Juan Zurita, a passionate Frontend Developer with a knack for creating engaging and user-friendly web applications. With a strong foundation in modern web technologies, I strive to build seamless digital experiences that captivate users and drive results.
+        </CardDescription>
+      </SectionCard>
+
+      <SectionCard
+        id='experience'
         title="Experience"
       >
         <Card>
@@ -82,6 +117,7 @@ function App() {
       </SectionCard>
 
       <SectionCard
+        id='education'
         title="Education"
       >
         <Card>
@@ -98,9 +134,10 @@ function App() {
       </SectionCard>
 
       <SectionCard
+        id='skills'
         title="Skills"
       >
-        <Divide className="my-4" />
+        <Separator />
         <ul className="list-disc ml-5">
           <li>JavaScript</li>
           <li>React</li>
@@ -116,6 +153,7 @@ function App() {
       </SectionCard>
 
       <SectionCard
+        id='projects'
         title="Projects"
       >
         <ProjectCard
