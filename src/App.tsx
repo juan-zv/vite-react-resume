@@ -19,6 +19,7 @@ import ibcSalesTrackerImage from '@/assets/ibc-sales-tool.png'
 import combinedValidatorImage from '@/assets/combined-validator.png'
 import dataSciencePortfolioImage from '@/assets/data-science-portfolio.png'
 import membersDataCheckerImage from '@/assets/members-data-checker.png'
+import uiRideImage from '@/assets/u-i-ride.png'
 
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <ModeToggle />
       <img
-        src="https://www.juanzurita.dev/images/yo-optimized.webp"
+        src="./public/yo-optimized.webp"
         className="object-cover rounded-lg drop-shadow-2xl mx-auto mt-2"
         alt="logo"
         loading='lazy'
@@ -38,14 +39,14 @@ function App() {
       <ButtonIcon
         className='my-2 mb-4 drop-shadow-lg cursor-pointer'
         variant='outline'
-        imageSrc="https://www.juanzurita.dev/images/linkedin.svg"
+        imageSrc="./public/linkedin.svg"
         label="LinkedIn"
         onClick={() => window.open("https://www.linkedin.com/in/juanzurita", "_blank")}
       />
       <ButtonIcon
         className='my-2 mb-4 drop-shadow-lg cursor-pointer'
         variant='outline'
-        imageSrc="https://www.juanzurita.dev/images/github.svg"
+        imageSrc="./public/github.svg"
         label="GitHub"
         onClick={() => window.open("https://github.com/juanzurita", "_blank")}
       />
@@ -262,7 +263,7 @@ function App() {
         <ProjectCard
           title='U&I Ride'
           description="Mobile app concept aimed at optimizing ride-sharing services in the Idaho-Utah area. Started developing CSS for future components."
-          imageSrc="https://www.juanzurita.dev/images/u-i-ride.png"
+          imageSrc={uiRideImage}
           repository="https://github.com/juan-zv/iride-web-app"
         />
       </SectionCard>
