@@ -33,7 +33,7 @@ function App() {
         loading='lazy'
       />
       <h1 className="text-2xl font-bold">Juan Zurita</h1>
-      <h2 className="text-m text-muted-foreground">Frontend Developer</h2>
+      <h2 className="text-m text-muted-foreground">Computer Scientist</h2>
 
       <ButtonIcon
         className='my-2 mb-4 drop-shadow-lg cursor-pointer'
