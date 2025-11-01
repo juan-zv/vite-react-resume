@@ -34,13 +34,13 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: lts/*
-          cache: 'pnpm'
+          cache: 'npm'
       - name: Install package manager
         run: npm install -g pnpm
       - name: Install dependencies
         run: pnpm ci
       - name: Build
-        run: npm run build
+        run: pnpm run build
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
