@@ -28,7 +28,7 @@ function App() {
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <ModeToggle />
       <img
-        src="./public/yo-optimized.webp"
+        src="./yo-optimized.webp"
         className="object-cover rounded-lg drop-shadow-2xl mx-auto mt-2"
         alt="logo"
         loading='lazy'
@@ -39,14 +39,14 @@ function App() {
       <ButtonIcon
         className='my-2 mb-4 drop-shadow-lg cursor-pointer'
         variant='outline'
-        imageSrc="./public/linkedin.svg"
+        imageSrc="./linkedin.svg"
         label="LinkedIn"
         onClick={() => window.open("https://www.linkedin.com/in/juanzurita", "_blank")}
       />
       <ButtonIcon
         className='my-2 mb-4 drop-shadow-lg cursor-pointer'
         variant='outline'
-        imageSrc="./public/github.svg"
+        imageSrc="./github.svg"
         label="GitHub"
         onClick={() => window.open("https://github.com/juanzurita", "_blank")}
       />
