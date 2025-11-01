@@ -1,0 +1,66 @@
+import React, { useState } from 'react';
+import { 
+    Card, 
+    CardTitle, 
+    CardDescription,
+    CardContent,
+    CardFooter
+} from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
+
+type ProjectCardProps = React.ComponentProps<"div"> & {
+    title?: string;
+    description?: string;
+    imageSrc?: string;
+    repository?: string;
+};
+
+function ProjectCard({title, description, imageSrc, repository }: ProjectCardProps) {
+    const [isImageOpen, setIsImageOpen] = useState(false)
+
+    return (
+        <>
+            <Card className={cn("max-w-[450px] w-full hover:scale-[1.05] transition-transform")}>
+                <CardContent>
+                    <CardTitle className="mb-2">{title}</CardTitle>
+                    <img 
+                        className="mb-2 w-full h-auto object-cover rounded-md cursor-pointer hover:opacity-80 transition-opacity" 
+                        src={imageSrc} 
+                        alt={title || 'Project image'}
+                        onClick={() => setIsImageOpen(true)}
+                    />
+                    <CardDescription>{description}</CardDescription>
+                </CardContent>
+                <CardFooter>
+                    <Button className="mx-auto" variant="outline" onClick={() => window.open(repository, "_blank")}>View Project</Button>
+                </CardFooter>
+            </Card>
+
+            {/* Image Modal */}
+            {isImageOpen && (
+                <div 
+                    className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+                    onClick={() => setIsImageOpen(false)}
+                >
+                    <div className="relative max-w-5xl max-h-[90vh] w-full">
+                        <button
+                            className="absolute -top-10 right-0 text-white hover:text-gray-300 text-2xl font-bold cursor-pointer"
+                            onClick={() => setIsImageOpen(false)}
+                        >
+                            ✕
+                        </button>
+                        <img 
+                            src={imageSrc} 
+                            alt={title || 'Project image'} 
+                            className="w-full h-auto max-h-[90vh] object-contain rounded-lg"
+                            onClick={(e) => e.stopPropagation()}
+                        />
+                    </div>
+                </div>
+            )}
+        </>
+    )
+}
+
+export { ProjectCard }

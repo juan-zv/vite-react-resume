@@ -7,13 +7,13 @@ export function ModeToggle() {
 
   return (
     <>
-      <Button variant="outline" size="icon" onClick={() => setTheme("light")}>
+      <Button className="mx-1" variant="outline" size="icon" onClick={() => setTheme("light")}>
         <Sun className="absolute h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-100 dark:rotate-360" />
       </Button>
-      <Button variant="outline" size="icon" onClick={() => setTheme("dark")}>
+      <Button className="mx-1" variant="outline" size="icon" onClick={() => setTheme("dark")}>
         <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-100 dark:rotate-360" />
       </Button>
-      <Button variant="outline" size="icon" onClick={() => setTheme("system")}>
+      <Button className="mx-1" variant="outline" size="icon" onClick={() => setTheme("system")}>
         <Computer className="absolute h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-100 dark:rotate-360" />
       </Button>
     </>
