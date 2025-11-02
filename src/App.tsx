@@ -27,6 +27,7 @@ function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <ModeToggle />
+      <Button className='absolute top-4 right-4 drop-shadow-lg cursor-pointer' variant={'outline'} onClick={() => window.open("https://html-resume-juan-zurita.vercel.app/", "_blank")}>Old Version</Button>
       <img
         src="./yo-optimized.webp"
         className="object-cover rounded-lg drop-shadow-2xl mx-auto mt-2"
