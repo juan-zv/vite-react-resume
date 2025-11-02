@@ -42,14 +42,14 @@ function App() {
         variant='outline'
         imageSrc="./linkedin.svg"
         label="LinkedIn"
-        onClick={() => window.open("https://www.linkedin.com/in/juanzurita", "_blank")}
+        onClick={() => window.open("https://www.linkedin.com/in/juanzuritavasquez", "_blank")}
       />
       <ButtonIcon
         className='my-2 mb-4 drop-shadow-lg cursor-pointer'
         variant='outline'
         imageSrc="./github.svg"
         label="GitHub"
-        onClick={() => window.open("https://github.com/juanzurita", "_blank")}
+        onClick={() => window.open("https://github.com/juan-zv", "_blank")}
       />
 
       <NavigationMenu className='mx-auto w-full md:w-auto'>
@@ -102,7 +102,7 @@ function App() {
           place='Provo, UT'
           dateRange='May 2025 - July 2025'
           description={[
-            "Participated in the IMMERSE research project, focusing on developing immersive technologies and applications. Collaborated with a team of researchers to explore innovative solutions in virtual and augmented reality."
+            "Participated in the BYU IMMERSE program focused on research opportunities for undergraduate students in Computer Science and Electrical Engineering. I worked on Hexagonal Grid Adaptation of Jump Point Search algorithm."
           ]}
           responsibilities={[
             { text: "Collaborated with a professor from the MAGICC Lab at BYU, and graduate-level researchers on a hexagonal grid adaptation of the Jump Point Search algorithm." },
