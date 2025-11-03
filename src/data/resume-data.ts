@@ -179,14 +179,14 @@ export const PROJECTS = [
     title: 'Combined Validator',
     description: "A tool for validating multiple pages' HTML and CSS in one go.",
     imageSrc: combinedValidatorImage,
-    repository: 'https://github.com/juan-zv/combined-validator-vanillajs',
+    repository: 'https://juan-zv.github.io/combined-validator-vanillajs/',
   },
   {
     id: 'data-science',
     title: 'Data Science Portfolio',
     description: 'A portfolio showcasing data science projects.',
     imageSrc: dataSciencePortfolioImage,
-    repository: 'https://github.com/juanzurita/data-science-portfolio',
+    repository: 'https://juan-zv.github.io/data-science-portfolio/',
   },
   {
     id: 'members-checker',
@@ -200,7 +200,7 @@ export const PROJECTS = [
     title: 'U&I Ride',
     description: 'Mobile app concept aimed at optimizing ride-sharing services in the Idaho-Utah area. Started developing CSS for future components.',
     imageSrc: uiRideImage,
-    repository: 'https://github.com/juan-zv/iride-web-app',
+    repository: 'https://juan-zv.github.io/iride-web-app/',
   },
 ]
 

@@ -46,7 +46,7 @@ function ExperienceCard({ title, institution, place, dateRange, description, res
                                 <img 
                                     src={resp.iconSrc} 
                                     alt="responsibility icon" 
-                                    className="w-4 h-4 mt-1 flex-shrink-0" 
+                                    className="w-4 h-4 mt-1 shrink-0" 
                                 />
                             )}
                             <span className="text-sm text-left">{resp.text}</span>
