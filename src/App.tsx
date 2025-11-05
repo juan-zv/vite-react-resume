@@ -238,7 +238,7 @@ function App() {
           description="A sales tracking tool for IBC. It records sales data 
             and saves it in a Supabase database for easy access and analysis."
           imageSrc={ibcSalesTrackerImage}
-          repository="https://github.com/juan-zv/ibc-sales-tool"
+          repository="https://github.com/juan-zv/ibc_sales_webapp"
         />
 
         <ProjectCard
