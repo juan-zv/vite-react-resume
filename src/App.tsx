@@ -86,7 +86,7 @@ function App() {
         id='about'
         title="About Me"
         description="Hi! I'm Juan Zurita, a Computer Science student at BYU-Idaho. I was born in Bolivia 🇧🇴, but when I was 4 years old, my family moved to Spain 🇪🇸, where I grew up and have lived most of my life.
-        I'm passionate about technology and AI, and I love creating anything that can have a real impact in the world. I enjoy learning a broad range of topics and I'm continuously looking for new challenges. I built this static vanilla JavaScript website to host my resume and showcase my design abilities. I hope you enjoy it!"
+        I'm passionate about technology and AI, which is why I am specializing my Computer Science degree in Machine Learning. I love creating anything that can have a real impact, from algorithmic research to full-stack web applications. I enjoy learning a broad range of topics and I'm continuously looking for new challenges. I built this static React SPA using TypeScript to host my resume and showcase my design abilities. I hope you enjoy it!"
       >
       </SectionCard>
 
@@ -145,6 +145,7 @@ function App() {
       <SectionCard
         id='education'
         title="Education"
+        className='flex flex-col gap-4'
       >
         <ExperienceCard
           className='max-w-[750px]'
@@ -157,12 +158,29 @@ function App() {
             'Relevant Coursework:'
           ]}
           responsibilities={[
+            { text: "Web Development (HTML, CSS, SCSS, JavaScript)" },
+            { text: "Database Management" },
             { text: "Data Structures and Algorithms" },
-            { text: "Web Development (HTML, CSS, JavaScript, React)" },
-            { text: "Database Management Systems" },
-            { text: "Operating Systems" },
-            { text: "Software Engineering Principles" },
-            { text: "Computer Networks" },
+            { text: "Parallelism and Concurrency" },
+            { text: "Applied Calculus for Data Analysis" },
+            { text: "Machine Learning" },
+          ]}
+        />
+
+        <ExperienceCard
+          className='max-w-[650px]'
+          title="Minor in Business Management"
+          place="Brigham Young University - Idaho"
+          dateRange="April 2022 - Present"
+          description={[
+            'Being able to complement my Computer Science degree with a Business Management minor allows me to gain a broader perspective on how technology can be applied in business contexts. This combination equips me with both technical skills and business acumen, making me a well-rounded professional ready to tackle challenges in the tech industry.',
+            'Relevant Coursework:'
+          ]}
+          responsibilities={[
+            { text: "Survey of Accounting" },
+            { text: "Business Fundamentals" },
+            { text: "Small Business Management" },
+            { text: "Integrated Business Core (IBC)" },
           ]}
         />
       </SectionCard>
@@ -172,6 +190,18 @@ function App() {
         title="Skills"
         className='flex flex-col sm:flex-row gap-4 justify-center items-stretch'
       >
+        <Card className='w-full md:w-[280px]'>
+          <CardHeader>
+            <CardTitle>Machine Learning & AI</CardTitle>
+          </CardHeader>
+          <CardContent className='mx-auto'>
+            <Skill name="RStudio" logoSrc='https://img.icons8.com/?size=100&id=6efxnoFC4djU&format=png&color=000000' level={5} />
+            <Skill name="Pandas" logoSrc='https://img.icons8.com/ios-filled/100/python.png' level={4} />
+            <Skill name="NumPy" logoSrc='https://img.icons8.com/ios-filled/100/python.png' level={4} />
+            <Skill name="Scikit-Learn" logoSrc='https://img.icons8.com/ios-filled/100/python.png' level={4} />
+            <Skill name="TensorFlow" logoSrc='https://img.icons8.com/ios-filled/100/python.png' level={3} />
+          </CardContent>
+        </Card>
         <Card className='w-full md:w-[280px]'>
           <CardHeader>
             <CardTitle>Programming Languages</CardTitle>
@@ -193,7 +223,7 @@ function App() {
             <Skill name="Git & GitHub" logoSrc='https://img.icons8.com/sf-regular-filled/96/github.png' level={4} />
             <Skill name="Figma" logoSrc='https://img.icons8.com/ios-filled/100/figma.png' level={4} />
             <Skill name="Tailwind CSS" logoSrc='https://img.icons8.com/material-outlined/96/tailwind_css.png' level={4} />
-            <Skill name="React" logoSrc='https://img.icons8.com/ios-glyphs/90/react.png' level={3} />
+            <Skill name="React" logoSrc='https://img.icons8.com/ios-glyphs/90/react.png' level={4} />
             <Skill name="Node.js" logoSrc='https://img.icons8.com/windows/96/nodejs.png' level={3} />
           </CardContent>
         </Card>
@@ -218,10 +248,19 @@ function App() {
         className='grid grid-cols-1 md:grid-cols-2 gap-4 justify-items-center'
       >
         <ProjectCard
+          title='Data Science Portfolio'
+          description="A portfolio showcasing data science projects."
+          imageSrc={dataSciencePortfolioImage}
+          liveDemo="https://juan-zv.github.io/data-science-portfolio/"
+          repository="https://github.com/juan-zv/data-science-portfolio/"
+        />
+
+        <ProjectCard
           title='Habitus Web App'
           description="Web application developed during BYU-Idaho's hackathon event, 
             created to manage households and roommates efficiently."
           imageSrc={habitusImage}
+          liveDemo="https://juan-zv.github.io/habitus-web-app/"
           repository="https://github.com/juan-zv/running-potato-key"
         />
         <ProjectCard
@@ -230,6 +269,7 @@ function App() {
             from IBC data. It uses a Supabase database to store and manage
             data efficiently."
           imageSrc={ibcReportGeneratorImage}
+          liveDemo="https://juan-zv.github.io/report_generator/"
           repository="https://github.com/juan-zv/report_generator"
         />
 
@@ -238,6 +278,7 @@ function App() {
           description="A sales tracking tool for IBC. It records sales data 
             and saves it in a Supabase database for easy access and analysis."
           imageSrc={ibcSalesTrackerImage}
+          liveDemo="https://juan-zv.github.io/ibc_sales_webapp/"
           repository="https://github.com/juan-zv/ibc_sales_webapp"
         />
 
@@ -245,27 +286,23 @@ function App() {
           title='Combined Validator'
           description="A tool for validating multiple pages' HTML and CSS in one go."
           imageSrc={combinedValidatorImage}
-          repository="https://juan-zv.github.io/combined-validator-vanillajs/"
-        />
-
-        <ProjectCard
-          title='Data Science Portfolio'
-          description="A portfolio showcasing data science projects."
-          imageSrc={dataSciencePortfolioImage}
-          repository="https://juan-zv.github.io/data-science-portfolio/"
+          liveDemo="https://juan-zv.github.io/combined-validator-vanillajs/"
+          repository="https://github.com/juan-zv/combined-validator-vanillajs/"
         />
 
         <ProjectCard
           title='Members Data Checker'
           description="A tool for checking student's members data integrity. Used to grade WDD 230 course."
           imageSrc={membersDataCheckerImage}
-          repository="https://juan-zv.github.io/members-data-checker/"
+          liveDemo="https://juan-zv.github.io/members-data-checker/"
+          repository="https://github.com/juan-zv/members-data-checker/"
         />
         <ProjectCard
           title='U&I Ride'
           description="Mobile app concept aimed at optimizing ride-sharing services in the Idaho-Utah area. Started developing CSS for future components."
           imageSrc={uiRideImage}
-          repository="https://juan-zv.github.io/iride-web-app/"
+          liveDemo="https://juan-zv.github.io/iride-web-app/"
+          repository="https://github.com/juan-zv/iride-web-app/"
         />
       </SectionCard>
       <footer className='flex flex-col gap-2 justify-center items-center mt-8 mb-4'>

@@ -13,27 +13,29 @@ type ProjectCardProps = React.ComponentProps<"div"> & {
     title?: string;
     description?: string;
     imageSrc?: string;
+    liveDemo?: string;
     repository?: string;
 };
 
-function ProjectCard({title, description, imageSrc, repository }: ProjectCardProps) {
+function ProjectCard({title, description, imageSrc, liveDemo, repository }: ProjectCardProps) {
     const [isImageOpen, setIsImageOpen] = useState(false)
 
     return (
         <>
-            <Card className={cn("max-w-[450px] w-full hover:scale-[1.05] transition-transform")}>
+            <Card className={cn("max-w-[450px] w-full hover:bg-accent duration-500")}>
                 <CardContent>
                     <CardTitle className="mb-2">{title}</CardTitle>
                     <img 
-                        className="mb-2 w-full h-auto object-cover rounded-md cursor-pointer hover:opacity-80 transition-opacity" 
+                        className="mb-2 w-full h-auto object-cover rounded-md cursor-pointer hover:opacity-80 transition-opacity duration-500" 
                         src={imageSrc} 
                         alt={title || 'Project image'}
                         onClick={() => setIsImageOpen(true)}
                     />
                     <CardDescription>{description}</CardDescription>
                 </CardContent>
-                <CardFooter>
-                    <Button className="mx-auto" variant="outline" onClick={() => window.open(repository, "_blank")}>View Project</Button>
+                <CardFooter className='flex flex-col gap-2'>
+                    <Button className="mx-auto cursor-pointer" variant="outline" onClick={() => window.open(liveDemo, "_blank")}>Live Demo</Button>
+                    <Button className="mx-auto cursor-pointer" variant="outline" onClick={() => window.open(repository, "_blank")}>View Project</Button>
                 </CardFooter>
             </Card>
 
