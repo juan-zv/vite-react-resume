@@ -260,7 +260,7 @@ function App() {
           description="Web application developed during BYU-Idaho's hackathon event, 
             created to manage households and roommates efficiently."
           imageSrc={habitusImage}
-          liveDemo="https://juan-zv.github.io/habitus-web-app/"
+          liveDemo="https://juan-zv.github.io/running-potato-key/"
           repository="https://github.com/juan-zv/running-potato-key"
         />
         <ProjectCard
