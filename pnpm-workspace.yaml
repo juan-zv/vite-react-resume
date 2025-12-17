@@ -1,3 +1,11 @@
 onlyBuiltDependencies:
   - '@tailwindcss/oxide'
   - esbuild
+
+overrides:
+  '@vitejs/plugin-rsc@<0.5.8': '>=0.5.8'
+  '@vitejs/plugin-rsc@<=0.5.5': '>=0.5.6'
+  '@vitejs/plugin-rsc@<=0.5.6': '>=0.5.7'
+  js-yaml@>=4.0.0 <4.1.1: '>=4.1.1'
+  tar@=7.5.1: '>=7.5.2'
+  vite@>=7.1.0 <=7.1.10: '>=7.1.11'

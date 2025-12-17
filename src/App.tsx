@@ -15,7 +15,6 @@ import { cn } from '@/lib/utils'
 
 import habitusImage from '@/assets/habitus.png'
 import ibcReportGeneratorImage from '@/assets/ibc-report-generator.png'
-import ibcSalesTrackerImage from '@/assets/ibc-sales-tool.png'
 import combinedValidatorImage from '@/assets/combined-validator.png'
 import dataSciencePortfolioImage from '@/assets/data-science-portfolio.png'
 import membersDataCheckerImage from '@/assets/members-data-checker.png'
