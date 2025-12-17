@@ -260,26 +260,17 @@ function App() {
           description="Web application developed during BYU-Idaho's hackathon event, 
             created to manage households and roommates efficiently."
           imageSrc={habitusImage}
-          liveDemo="https://juan-zv.github.io/running-potato-key/"
-          repository="https://github.com/juan-zv/running-potato-key"
-        />
-        <ProjectCard
-          title='IBC Report Generator'
-          description="A tool for generating reports 
-            from IBC data. It uses a Supabase database to store and manage
-            data efficiently."
-          imageSrc={ibcReportGeneratorImage}
-          liveDemo="https://juan-zv.github.io/report_generator/"
-          repository="https://github.com/juan-zv/report_generator"
+          liveDemo="https://juan-zv.github.io/habitus/"
+          repository="https://github.com/juan-zv/habitus/"
         />
 
         <ProjectCard
-          title='IBC Sales Tracker'
-          description="A sales tracking tool for IBC. It records sales data 
-            and saves it in a Supabase database for easy access and analysis."
-          imageSrc={ibcSalesTrackerImage}
-          liveDemo="https://juan-zv.github.io/ibc_sales_webapp/"
-          repository="https://github.com/juan-zv/ibc_sales_webapp"
+          title='Keystone Apparel Sales System'
+          description="Management system for a small business, developed
+            to handle sales and pre-sales data. This is just a demo version of the system."
+          imageSrc={ibcReportGeneratorImage}
+          liveDemo="https://juan-zv.github.io/keystone-apparel-demo/"
+          repository="https://github.com/juan-zv/keystone-apparel-demo"
         />
 
         <ProjectCard
