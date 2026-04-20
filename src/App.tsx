@@ -3,15 +3,38 @@ import './App.css'
 import { ModeToggle } from '@/components/mode-toggle'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Button } from './components/ui/button'
-import { ButtonIcon } from '@/components/ui/button-icon'
 import { ProjectCard } from './components/ui/project-card'
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from './components/ui/navigation-menu'
 import { Card, CardContent, CardHeader, CardTitle } from './components/ui/card'
 import { SectionCard } from './components/ui/section-card'
 import { Skill } from './components/ui/skill'
-import { ChevronUp } from 'lucide-react'
 import { ExperienceCard } from './components/ui/experience-card'
 import { cn } from '@/lib/utils'
+import { 
+  IconBrandLinkedin, 
+  IconBrandGithub, 
+  IconChevronUp,
+  IconChartDots,
+  IconTable,
+  IconMath,
+  IconBrain,
+  IconCpu,
+  IconBrandPython,
+  IconBrandJavascript,
+  IconBrandTypescript,
+  IconBrandCSharp,
+  IconBrandRust,
+  IconBrandVscode,
+  IconBrandFigma,
+  IconBrandTailwind,
+  IconBrandReact,
+  IconBrandNodejs,
+  IconUsers,
+  IconGlobe,
+  IconBriefcase,
+  IconArrowsExchange,
+  IconMessages
+} from '@tabler/icons-react'
 import { motion, useScroll } from "motion/react"
 
 const containerVariants = {
@@ -62,20 +85,24 @@ function App() {
         <motion.h2 variants={itemVariants} className="text-m text-muted-foreground">Computer Scientist</motion.h2>
 
         <motion.div variants={itemVariants} className="flex gap-2 justify-center">
-          <ButtonIcon
-            className='my-2 mb-4 drop-shadow-lg cursor-pointer'
+          <Button
+            className='mx-1 my-2 mb-4 drop-shadow-lg cursor-pointer w-12 h-12'
             variant='outline'
-            imageSrc="./linkedin.svg"
-            label="LinkedIn"
+            size='icon'
+            aria-label="LinkedIn"
             onClick={() => window.open("https://www.linkedin.com/in/juanzuritavasquez", "_blank")}
-          />
-          <ButtonIcon
-            className='my-2 mb-4 drop-shadow-lg cursor-pointer'
+          >
+            <IconBrandLinkedin size={28} stroke={1.5} />
+          </Button>
+          <Button
+            className='mx-1 my-2 mb-4 drop-shadow-lg cursor-pointer w-12 h-12'
             variant='outline'
-            imageSrc="./github.svg"
-            label="GitHub"
+            size='icon'
+            aria-label="GitHub"
             onClick={() => window.open("https://github.com/juan-zv", "_blank")}
-          />
+          >
+            <IconBrandGithub size={28} stroke={1.5} />
+          </Button>
         </motion.div>
       </motion.div>
 
@@ -222,11 +249,11 @@ function App() {
             <CardTitle>Machine Learning & AI</CardTitle>
           </CardHeader>
           <CardContent className='mx-auto'>
-            <Skill name="RStudio" logoSrc='https://img.icons8.com/?size=100&id=6efxnoFC4djU&format=png&color=000000' level={5} />
-            <Skill name="Pandas" logoSrc='https://img.icons8.com/ios-filled/100/python.png' level={4} />
-            <Skill name="NumPy" logoSrc='https://img.icons8.com/ios-filled/100/python.png' level={4} />
-            <Skill name="Scikit-Learn" logoSrc='https://img.icons8.com/ios-filled/100/python.png' level={4} />
-            <Skill name="TensorFlow" logoSrc='https://img.icons8.com/ios-filled/100/python.png' level={3} />
+            <Skill name="RStudio" icon={<IconChartDots size={32} stroke={1.5} />} level={5} />
+            <Skill name="Pandas" icon={<IconTable size={32} stroke={1.5} />} level={4} />
+            <Skill name="NumPy" icon={<IconMath size={32} stroke={1.5} />} level={4} />
+            <Skill name="Scikit-Learn" icon={<IconBrain size={32} stroke={1.5} />} level={4} />
+            <Skill name="TensorFlow" icon={<IconCpu size={32} stroke={1.5} />} level={3} />
           </CardContent>
         </Card>
         <Card className='w-full md:w-[280px]'>
@@ -234,11 +261,11 @@ function App() {
             <CardTitle>Programming Languages</CardTitle>
           </CardHeader>
           <CardContent className='mx-auto'>
-            <Skill name="Python" logoSrc='https://img.icons8.com/ios-filled/100/python.png' level={5} />
-            <Skill name="JavaScript" logoSrc='https://img.icons8.com/ios-filled/100/javascript.png' level={5} />
-            <Skill name="TypeScript" logoSrc='https://img.icons8.com/ios-filled/100/typescript.png' level={4} />
-            <Skill name="C#" logoSrc='https://img.icons8.com/ios-filled/100/c-sharp-logo.png' level={4} />
-            <Skill name="Rust" logoSrc='https://img.icons8.com/external-tal-revivo-bold-tal-revivo/96/external-rust-is-a-multi-paradigm-system-programming-language-logo-bold-tal-revivo.png' level={2} />
+            <Skill name="Python" icon={<IconBrandPython size={32} stroke={1.5} />} level={5} />
+            <Skill name="JavaScript" icon={<IconBrandJavascript size={32} stroke={1.5} />} level={5} />
+            <Skill name="TypeScript" icon={<IconBrandTypescript size={32} stroke={1.5} />} level={4} />
+            <Skill name="C#" icon={<IconBrandCSharp size={32} stroke={1.5} />} level={4} />
+            <Skill name="Rust" icon={<IconBrandRust size={32} stroke={1.5} />} level={2} />
           </CardContent>
         </Card>
         <Card className='w-full md:w-[280px]'>
@@ -246,12 +273,12 @@ function App() {
             <CardTitle>Tools & Technologies</CardTitle>
           </CardHeader>
           <CardContent className='mx-auto'>
-            <Skill name="VS Code" logoSrc='https://img.icons8.com/ios-filled/100/visual-studio.png' level={5} />
-            <Skill name="Git & GitHub" logoSrc='https://img.icons8.com/sf-regular-filled/96/github.png' level={4} />
-            <Skill name="Figma" logoSrc='https://img.icons8.com/ios-filled/100/figma.png' level={4} />
-            <Skill name="Tailwind CSS" logoSrc='https://img.icons8.com/material-outlined/96/tailwind_css.png' level={4} />
-            <Skill name="React" logoSrc='https://img.icons8.com/ios-glyphs/90/react.png' level={4} />
-            <Skill name="Node.js" logoSrc='https://img.icons8.com/windows/96/nodejs.png' level={3} />
+            <Skill name="VS Code" icon={<IconBrandVscode size={32} stroke={1.5} />} level={5} />
+            <Skill name="Git & GitHub" icon={<IconBrandGithub size={32} stroke={1.5} />} level={4} />
+            <Skill name="Figma" icon={<IconBrandFigma size={32} stroke={1.5} />} level={4} />
+            <Skill name="Tailwind CSS" icon={<IconBrandTailwind size={32} stroke={1.5} />} level={4} />
+            <Skill name="React" icon={<IconBrandReact size={32} stroke={1.5} />} level={4} />
+            <Skill name="Node.js" icon={<IconBrandNodejs size={32} stroke={1.5} />} level={3} />
           </CardContent>
         </Card>
         <Card className='w-full md:w-[280px]'>
@@ -259,12 +286,12 @@ function App() {
             <CardTitle>Soft Skills</CardTitle>
           </CardHeader>
           <CardContent className='mx-auto'>
-            <Skill name="Problem Solving" logoSrc='https://img.icons8.com/ios-filled/100/brain.png' level={5} />
-            <Skill name="Teamwork" logoSrc="https://img.icons8.com/ios-filled/100/collaborating-in-circle.png" level={5} />
-            <Skill name="Ethical Awareness" logoSrc='https://img.icons8.com/ios-filled/100/earth-planet.png' level={5} />
-            <Skill name="Project Management" logoSrc='https://img.icons8.com/ios-filled/100/analyzing-skill.png' level={4} />
-            <Skill name="Adaptability" logoSrc='https://img.icons8.com/ios-filled/100/change-user-male.png' level={4} />
-            <Skill name="Communication" logoSrc='https://img.icons8.com/ios-filled/100/communication-skill.png' level={4} />
+            <Skill name="Problem Solving" icon={<IconBrain size={32} stroke={1.5} />} level={5} />
+            <Skill name="Teamwork" icon={<IconUsers size={32} stroke={1.5} />} level={5} />
+            <Skill name="Ethical Awareness" icon={<IconGlobe size={32} stroke={1.5} />} level={5} />
+            <Skill name="Project Management" icon={<IconBriefcase size={32} stroke={1.5} />} level={4} />
+            <Skill name="Adaptability" icon={<IconArrowsExchange size={32} stroke={1.5} />} level={4} />
+            <Skill name="Communication" icon={<IconMessages size={32} stroke={1.5} />} level={4} />
           </CardContent>
         </Card>
       </SectionCard>
@@ -333,11 +360,10 @@ function App() {
       </footer>
       <Button
         variant="outline"
-        size={'icon-xl'}
-        className='fixed bottom-4 right-4 z-50 cursor-pointer'
+        className='fixed bottom-4 right-4 z-50 cursor-pointer w-14 h-14'
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       >
-        <ChevronUp size={32} />
+        <IconChevronUp size={32} stroke={1.5} />
       </Button>
     </ThemeProvider>
   )
