@@ -1,5 +1,6 @@
 import { CalendarIcon } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { motion } from "motion/react"
 
 type Responsibility = {
     text: string;
@@ -18,8 +19,9 @@ type ExperienceCardProps = {
 
 function ExperienceCard({ title, institution, place, dateRange, description, responsibilities, className }: ExperienceCardProps) {
     return (
-        <Card className={`mx-auto ${className}`}>
-            <CardHeader className="text-center">
+        <motion.div whileHover={{ scale: 1.02, y: -5 }} transition={{ duration: 0.2 }} className={`mx-auto w-full h-full ${className}`}>
+            <Card className="h-full">
+                <CardHeader className="text-center">
                 <CardTitle className="text-md">{title}</CardTitle>
                 {institution && <CardDescription className="text-sm">{institution}</CardDescription>}
                 {place && <CardDescription className="text-sm">{place}</CardDescription>}
@@ -36,11 +38,27 @@ function ExperienceCard({ title, institution, place, dateRange, description, res
                         {desc}
                     </CardDescription>
                 ))}
-                <ul className="ml-5 text-left">
+                <motion.ul 
+                    className="ml-5 text-left"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={{
+                        hidden: { opacity: 0 },
+                        visible: {
+                            opacity: 1,
+                            transition: { staggerChildren: 0.1 }
+                        }
+                    }}
+                >
                     {responsibilities?.map((resp, index) => (
-                        <li 
+                        <motion.li 
                             key={index} 
                             className={resp.iconSrc ? "flex items-start gap-2 list-none text-left" : "list-disc text-left"}
+                            variants={{
+                                hidden: { opacity: 0, x: -10 },
+                                visible: { opacity: 1, x: 0 }
+                            }}
                         >
                             {resp.iconSrc && (
                                 <img 
@@ -50,11 +68,12 @@ function ExperienceCard({ title, institution, place, dateRange, description, res
                                 />
                             )}
                             <span className="text-sm text-left">{resp.text}</span>
-                        </li>
+                        </motion.li>
                     ))}
-                </ul>
+                </motion.ul>
             </CardContent>
-        </Card>
+            </Card>
+        </motion.div>
     )
 }
 

@@ -12,6 +12,23 @@ import { Skill } from './components/ui/skill'
 import { ChevronUp } from 'lucide-react'
 import { ExperienceCard } from './components/ui/experience-card'
 import { cn } from '@/lib/utils'
+import { motion, useScroll } from "motion/react"
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 }
+};
 
 import habitusImage from '@/assets/habitus.png'
 import ibcReportGeneratorImage from '@/assets/ibc-report-generator.png'
@@ -22,34 +39,45 @@ import uiRideImage from '@/assets/u-i-ride.png'
 
 
 function App() {
+  const { scrollYProgress } = useScroll();
 
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-1.5 bg-primary origin-left z-50 shadow-md"
+        style={{ scaleX: scrollYProgress }}
+      />
       <ModeToggle />
       <Button className='absolute top-4 right-4 drop-shadow-lg cursor-pointer' variant={'outline'} onClick={() => window.open("https://html-resume-juan-zurita.vercel.app/", "_blank")}>Old Version</Button>
-      <img
-        src="./yo-optimized.webp"
-        className="object-cover rounded-lg drop-shadow-2xl mx-auto mt-2"
-        alt="logo"
-        loading='lazy'
-      />
-      <h1 className="text-2xl font-bold">Juan Zurita</h1>
-      <h2 className="text-m text-muted-foreground">Computer Scientist</h2>
+      
+      <motion.div variants={containerVariants} initial="hidden" animate="visible" className="flex flex-col items-center">
+        <motion.img
+          variants={itemVariants}
+          src="./yo-optimized.webp"
+          className="object-cover rounded-lg drop-shadow-2xl mx-auto mt-2"
+          alt="logo"
+          loading='lazy'
+        />
+        <motion.h1 variants={itemVariants} className="text-2xl font-bold mt-4">Juan Zurita</motion.h1>
+        <motion.h2 variants={itemVariants} className="text-m text-muted-foreground">Computer Scientist</motion.h2>
 
-      <ButtonIcon
-        className='my-2 mb-4 drop-shadow-lg cursor-pointer'
-        variant='outline'
-        imageSrc="./linkedin.svg"
-        label="LinkedIn"
-        onClick={() => window.open("https://www.linkedin.com/in/juanzuritavasquez", "_blank")}
-      />
-      <ButtonIcon
-        className='my-2 mb-4 drop-shadow-lg cursor-pointer'
-        variant='outline'
-        imageSrc="./github.svg"
-        label="GitHub"
-        onClick={() => window.open("https://github.com/juan-zv", "_blank")}
-      />
+        <motion.div variants={itemVariants} className="flex gap-2 justify-center">
+          <ButtonIcon
+            className='my-2 mb-4 drop-shadow-lg cursor-pointer'
+            variant='outline'
+            imageSrc="./linkedin.svg"
+            label="LinkedIn"
+            onClick={() => window.open("https://www.linkedin.com/in/juanzuritavasquez", "_blank")}
+          />
+          <ButtonIcon
+            className='my-2 mb-4 drop-shadow-lg cursor-pointer'
+            variant='outline'
+            imageSrc="./github.svg"
+            label="GitHub"
+            onClick={() => window.open("https://github.com/juan-zv", "_blank")}
+          />
+        </motion.div>
+      </motion.div>
 
       <NavigationMenu className='mx-auto w-full md:w-auto'>
         <NavigationMenuList className='flex-col md:flex-row w-full'>

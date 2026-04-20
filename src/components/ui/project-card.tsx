@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from "motion/react"
 import { 
     Card, 
     CardTitle, 
@@ -22,7 +23,8 @@ function ProjectCard({title, description, imageSrc, liveDemo, repository }: Proj
 
     return (
         <>
-            <Card className={cn("max-w-[450px] w-full hover:bg-accent duration-500")}>
+            <motion.div whileHover={{ scale: 1.02, y: -5 }} transition={{ duration: 0.2 }} className="max-w-[450px] w-full h-full flex flex-col">
+                <Card className={cn("hover:bg-accent hover:text-accent-foreground duration-500 h-full flex flex-col")}>
                 <CardContent>
                     <CardTitle className="mb-2">{title}</CardTitle>
                     <img 
@@ -37,7 +39,8 @@ function ProjectCard({title, description, imageSrc, liveDemo, repository }: Proj
                     <Button className="mx-auto cursor-pointer" variant="outline" onClick={() => window.open(liveDemo, "_blank")}>Live Demo</Button>
                     <Button className="mx-auto cursor-pointer" variant="outline" onClick={() => window.open(repository, "_blank")}>View Project</Button>
                 </CardFooter>
-            </Card>
+                </Card>
+            </motion.div>
 
             {/* Image Modal */}
             {isImageOpen && (
