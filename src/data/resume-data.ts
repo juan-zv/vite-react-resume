@@ -6,7 +6,7 @@ export const PERSONAL_INFO = {
   title: 'Computer Scientist',
   profileImage: './yo-optimized.webp',
   about: `Hi! I'm Juan Zurita, a Computer Science student at BYU-Idaho. I was born in Bolivia 🇧🇴, but when I was 4 years old, my family moved to Spain 🇪🇸, where I grew up and have lived most of my life.
-I'm passionate about technology and AI, and I love creating anything that can have a real impact in the world. I enjoy learning a broad range of topics and I'm continuously looking for new challenges. I built this static vanilla JavaScript website to host my resume and showcase my design abilities. I hope you enjoy it!`,
+        I'm passionate about technology and AI, which is why I am specializing my Computer Science degree in Machine Learning. I love creating anything that can have a real impact, from algorithmic research to full-stack web applications. I enjoy learning a broad range of topics and I'm continuously looking for new challenges. I built this static React SPA using TypeScript to host my resume and showcase my design abilities. I hope you enjoy it!`,
 }
 
 export const SOCIAL_LINKS = [
@@ -98,26 +98,55 @@ export const EXPERIENCES = [
   },
 ]
 
-export const EDUCATION = {
-  degree: 'Bachelor of Science in Computer Science',
-  institution: 'Brigham Young University - Idaho',
-  dateRange: 'April 2022 - Present',
-  gpa: '3.83/4.00',
-  description: [
-    'My education at BYU-Idaho has provided me with a strong foundation in computer science principles and practical skills. The coursework has equipped me with knowledge in various areas of computer science, preparing me for real-world challenges in the tech industry.',
-    'I am currently studying Computer Science with an emphasis on Machine Learning at Brigham Young University-Idaho. Among the coursework that I have taken, I have learned the application of different data structures and algorithms, and the basics of Object-Oriented Programming. Other useful knowledge I have acquired includes work methodologies like SCRUM and DevOps, as well as web development tools like SASS and front-end libraries.',
-  ],
-  coursework: [
-    'Data Structures and Algorithms',
-    'Web Development (HTML, CSS, JavaScript, React)',
-    'Database Management Systems',
-    'Operating Systems',
-    'Software Engineering Principles',
-    'Computer Networks',
-  ],
-}
+export const EDUCATION = [
+  {
+    id: 'degree',
+    degree: 'Bachelor of Science in Computer Science',
+    institution: 'Brigham Young University - Idaho',
+    place: 'Rexburg, ID',
+    dateRange: 'April 2022 - Present',
+    gpa: '3.83/4.00',
+    description: [
+      'My education at BYU-Idaho has provided me with a strong foundation in computer science principles and practical skills. The coursework has equipped me with knowledge in various areas of computer science, preparing me for real-world challenges in the tech industry.',
+      'I am currently studying Computer Science with an emphasis on Machine Learning at Brigham Young University-Idaho. Among the coursework that I have taken, I have learned the application of different data structures and algorithms, and the basics of Object-Oriented Programming. Other useful knowledge I have acquired includes work methodologies like SCRUM and DevOps, as well as web development tools like SASS and front-end libraries.',
+      'Relevant Coursework:',
+    ],
+    coursework: [
+      "Web Development (HTML, CSS, SCSS, JavaScript)",
+      "Database Management",
+      "Data Structures and Algorithms",
+      "Parallelism and Concurrency",
+      "Applied Calculus for Data Analysis",
+      "Machine Learning",
+    ],
+  },
+  {
+    id: 'minor',
+    degree: 'Minor in Business Management',
+    institution: 'Brigham Young University - Idaho',
+    place: 'Rexburg, ID',
+    dateRange: 'April 2022 - Present',
+    description: [
+      'Being able to complement my Computer Science degree with a Business Management minor allows me to gain a broader perspective on how technology can be applied in business contexts. This combination equips me with both technical skills and business acumen, making me a well-rounded professional ready to tackle challenges in the tech industry.',
+      'Relevant Coursework:',
+    ],
+    coursework: [
+      "Survey of Accounting",
+      "Business Fundamentals",
+      "Small Business Management",
+      "Integrated Business Core (IBC)",
+    ],
+  },
+]
 
 export const SKILLS = {
+  'Machine Learning & AI': [
+    { name: 'RStudio', logoSrc: 'https://img.icons8.com/?size=100&id=6efxnoFC4djU&format=png&color=000000', level: 5 },
+    { name: 'Pandas', logoSrc: 'https://img.icons8.com/ios-filled/100/python.png', level: 4 },
+    { name: 'NumPy', logoSrc: 'https://img.icons8.com/ios-filled/100/python.png', level: 4 },
+    { name: 'Scikit-Learn', logoSrc: 'https://img.icons8.com/ios-filled/100/python.png', level: 4 },
+    { name: 'TensorFlow', logoSrc: 'https://img.icons8.com/ios-filled/100/python.png', level: 3 },
+  ],
   'Programming Languages': [
     { name: 'Python', logoSrc: 'https://img.icons8.com/ios-filled/100/python.png', level: 5 },
     { name: 'JavaScript', logoSrc: 'https://img.icons8.com/ios-filled/100/javascript.png', level: 5 },
@@ -130,7 +159,7 @@ export const SKILLS = {
     { name: 'Git & GitHub', logoSrc: 'https://img.icons8.com/sf-regular-filled/96/github.png', level: 4 },
     { name: 'Figma', logoSrc: 'https://img.icons8.com/ios-filled/100/figma.png', level: 4 },
     { name: 'Tailwind CSS', logoSrc: 'https://img.icons8.com/material-outlined/96/tailwind_css.png', level: 4 },
-    { name: 'React', logoSrc: 'https://img.icons8.com/ios-glyphs/90/react.png', level: 3 },
+    { name: 'React', logoSrc: 'https://img.icons8.com/ios-glyphs/90/react.png', level: 4 },
     { name: 'Node.js', logoSrc: 'https://img.icons8.com/windows/96/nodejs.png', level: 3 },
   ],
   'Soft Skills': [
@@ -146,7 +175,6 @@ export const SKILLS = {
 // Import paths for project images
 import habitusImage from '@/assets/habitus.png'
 import ibcReportGeneratorImage from '@/assets/ibc-report-generator.png'
-import ibcSalesTrackerImage from '@/assets/ibc-sales-tool.png'
 import combinedValidatorImage from '@/assets/combined-validator.png'
 import dataSciencePortfolioImage from '@/assets/data-science-portfolio.png'
 import membersDataCheckerImage from '@/assets/members-data-checker.png'
@@ -154,53 +182,52 @@ import uiRideImage from '@/assets/u-i-ride.png'
 
 export const PROJECTS = [
   {
+    id: 'data-science',
+    title: 'Data Science Portfolio',
+    description: 'A portfolio showcasing data science projects.',
+    imageSrc: dataSciencePortfolioImage,
+    repository: 'https://github.com/juan-zv/data-science-portfolio/',
+    liveDemo: 'https://juan-zv.github.io/data-science-portfolio/',
+  },
+  {
     id: 'habitus',
     title: 'Habitus Web App',
     description: "Web application developed during BYU-Idaho's hackathon event, created to manage households and roommates efficiently.",
     imageSrc: habitusImage,
-    repository: 'https://github.com/juan-zv/running-potato-key',
+    repository: 'https://github.com/juan-zv/habitus/',
+    liveDemo: 'https://juan-zv.github.io/habitus/',
   },
   {
-    id: 'ibc-report',
-    title: 'IBC Report Generator',
-    description: 'A tool for generating reports from IBC data. It uses a Supabase database to store and manage data efficiently.',
+    id: 'keystone-apparel',
+    title: 'Keystone Apparel Sales System',
+    description: 'Management system for a small business, developed to handle sales and pre-sales data. This is just a demo version of the system.',
     imageSrc: ibcReportGeneratorImage,
-    repository: 'https://github.com/juan-zv/report_generator',
-  },
-  {
-    id: 'ibc-sales',
-    title: 'IBC Sales Tracker',
-    description: 'A sales tracking tool for IBC. It records sales data and saves it in a Supabase database for easy access and analysis.',
-    imageSrc: ibcSalesTrackerImage,
-    repository: 'https://github.com/juan-zv/ibc-sales-tool',
+    repository: 'https://github.com/juan-zv/keystone-apparel-demo',
+    liveDemo: 'https://juan-zv.github.io/keystone-apparel-demo/',
   },
   {
     id: 'combined-validator',
     title: 'Combined Validator',
     description: "A tool for validating multiple pages' HTML and CSS in one go.",
     imageSrc: combinedValidatorImage,
-    repository: 'https://juan-zv.github.io/combined-validator-vanillajs/',
-  },
-  {
-    id: 'data-science',
-    title: 'Data Science Portfolio',
-    description: 'A portfolio showcasing data science projects.',
-    imageSrc: dataSciencePortfolioImage,
-    repository: 'https://juan-zv.github.io/data-science-portfolio/',
+    repository: 'https://github.com/juan-zv/combined-validator-vanillajs/',
+    liveDemo: 'https://juan-zv.github.io/combined-validator-vanillajs/',
   },
   {
     id: 'members-checker',
     title: 'Members Data Checker',
     description: "A tool for checking student's members data integrity. Used to grade WDD 230 course.",
     imageSrc: membersDataCheckerImage,
-    repository: 'https://juan-zv.github.io/members-data-checker/',
+    repository: 'https://github.com/juan-zv/members-data-checker/',
+    liveDemo: 'https://juan-zv.github.io/members-data-checker/',
   },
   {
     id: 'ui-ride',
     title: 'U&I Ride',
     description: 'Mobile app concept aimed at optimizing ride-sharing services in the Idaho-Utah area. Started developing CSS for future components.',
     imageSrc: uiRideImage,
-    repository: 'https://juan-zv.github.io/iride-web-app/',
+    repository: 'https://github.com/juan-zv/iride-web-app/',
+    liveDemo: 'https://juan-zv.github.io/iride-web-app/',
   },
 ]
 
