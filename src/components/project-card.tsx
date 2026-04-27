@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import { motion } from "motion/react"
 import { 
     Card, 
     CardTitle, 
     CardDescription,
-    CardContent,
+    CardHeader,
     CardFooter
 } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -22,8 +23,9 @@ function ProjectCard({title, description, imageSrc, liveDemo, repository }: Proj
 
     return (
         <>
-            <Card className={cn("max-w-[450px] w-full hover:bg-accent duration-500")}>
-                <CardContent>
+            <motion.div whileHover={{ scale: 1.02, y: -5 }} transition={{ duration: 0.2 }} className="max-w-[450px] w-full h-full flex flex-col">
+                <Card className={cn("hover:bg-accent hover:text-accent-foreground duration-500 h-full flex flex-col")}>
+                <CardHeader>
                     <CardTitle className="mb-2">{title}</CardTitle>
                     <img 
                         className="mb-2 w-full h-auto object-cover rounded-md cursor-pointer hover:opacity-80 transition-opacity duration-500" 
@@ -32,12 +34,13 @@ function ProjectCard({title, description, imageSrc, liveDemo, repository }: Proj
                         onClick={() => setIsImageOpen(true)}
                     />
                     <CardDescription>{description}</CardDescription>
-                </CardContent>
-                <CardFooter className='flex flex-col gap-2'>
+                </CardHeader>
+                <CardFooter>
                     <Button className="mx-auto cursor-pointer" variant="outline" onClick={() => window.open(liveDemo, "_blank")}>Live Demo</Button>
                     <Button className="mx-auto cursor-pointer" variant="outline" onClick={() => window.open(repository, "_blank")}>View Project</Button>
                 </CardFooter>
-            </Card>
+                </Card>
+            </motion.div>
 
             {/* Image Modal */}
             {isImageOpen && (

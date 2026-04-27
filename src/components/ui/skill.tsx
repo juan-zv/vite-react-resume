@@ -1,23 +1,27 @@
 import { Progress } from "@/components/ui/progress"
+import type { ReactNode } from "react";
 
 type SkillProps = {
     name: string;
     logoSrc?: string;
+    icon?: ReactNode;
     level?: number;
 };
 
-function Skill({ name, logoSrc, level }: SkillProps) {
+function Skill({ name, logoSrc, icon, level }: SkillProps) {
   return (
     <div className="grid grid-cols-[50px_120px] gap-2 rounded-lg hover:bg-accent/50 transition-colors p-2">
       {/* Left column: 50px wide, 50px tall for logo */}
-      <div className="w-full flex items-center justify-center">
-        {logoSrc && (
+      <div className="w-full flex items-center justify-center text-foreground">
+        {icon ? (
+          icon
+        ) : logoSrc ? (
           <img 
             src={logoSrc} 
             alt={`${name} logo`} 
             className="w-8 h-8 dark:invert object-contain" 
           />
-        )}
+        ) : null}
       </div>
       
       {/* Right column: 150px wide, 100px tall with 2 rows */}
