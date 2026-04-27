@@ -3,12 +3,12 @@ import './App.css'
 import { ModeToggle } from '@/components/mode-toggle'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Button } from './components/ui/button'
-import { ProjectCard } from './components/ui/project-card'
+import { ProjectCard } from './components/project-card'
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from './components/ui/navigation-menu'
 import { Card, CardContent, CardHeader, CardTitle } from './components/ui/card'
-import { SectionCard } from './components/ui/section-card'
+import { SectionCard } from './components/section-card'
 import { Skill } from './components/ui/skill'
-import { ExperienceCard } from './components/ui/experience-card'
+import { ExperienceCard } from './components/experience-card'
 import { cn } from '@/lib/utils'
 import { 
   IconBrandLinkedin, 
@@ -16,7 +16,6 @@ import {
   IconChevronUp,
   IconChartDots,
   IconTable,
-  IconMath,
   IconBrain,
   IconCpu,
   IconBrandPython,
@@ -29,11 +28,8 @@ import {
   IconBrandTailwind,
   IconBrandReact,
   IconBrandNodejs,
-  IconUsers,
   IconGlobe,
-  IconBriefcase,
-  IconArrowsExchange,
-  IconMessages
+  IconBriefcase
 } from '@tabler/icons-react'
 import { motion, useScroll } from "motion/react"
 
@@ -82,7 +78,7 @@ function App() {
           loading='lazy'
         />
         <motion.h1 variants={itemVariants} className="text-2xl font-bold mt-4">Juan Zurita</motion.h1>
-        <motion.h2 variants={itemVariants} className="text-m text-muted-foreground">Computer Scientist</motion.h2>
+        <motion.h2 variants={itemVariants} className="text-m text-muted-foreground">Computer Science Student</motion.h2>
 
         <motion.div variants={itemVariants} className="flex gap-2 justify-center">
           <Button
@@ -95,13 +91,13 @@ function App() {
             <IconBrandLinkedin size={28} stroke={1.5} />
           </Button>
           <Button
-            className='mx-1 my-2 mb-4 drop-shadow-lg cursor-pointer w-12 h-12'
+            className='mx-1 my-2 mb-4 drop-shadow-lg cursor-pointer w-24 h-24'
             variant='outline'
-            size='icon'
+            size='icon-lg'
             aria-label="GitHub"
             onClick={() => window.open("https://github.com/juan-zv", "_blank")}
           >
-            <IconBrandGithub size={28} stroke={1.5} />
+            <IconBrandGithub size={48} stroke={2} />
           </Button>
         </motion.div>
       </motion.div>
@@ -109,28 +105,28 @@ function App() {
       <NavigationMenu className='mx-auto w-full md:w-auto'>
         <NavigationMenuList className='flex-col md:flex-row w-full'>
           <NavigationMenuItem className='w-full md:w-auto'>
-            <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), 'w-full md:w-max text-xl drop-shadow-md dark:bg-input/30 dark:hover:bg-accent')}>
-              <a href="#about">About</a>
+            <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'w-full md:w-max text-xl drop-shadow-md dark:bg-input/30 dark:hover:bg-accent')} href="#about">
+              About
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem className='w-full md:w-auto'>
-            <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), 'w-full md:w-max text-xl drop-shadow-md dark:bg-input/30 dark:hover:bg-accent')}>
-              <a href="#experience">Experience</a>
+            <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'w-full md:w-max text-xl drop-shadow-md dark:bg-input/30 dark:hover:bg-accent')} href="#experience">
+              Experience
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem className='w-full md:w-auto'>
-            <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), 'w-full md:w-max text-xl drop-shadow-md dark:bg-input/30 dark:hover:bg-accent')}>
-              <a href="#education">Education</a>
+            <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'w-full md:w-max text-xl drop-shadow-md dark:bg-input/30 dark:hover:bg-accent')} href="#education">
+              Education
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem className='w-full md:w-auto'>
-            <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), 'w-full md:w-max text-xl drop-shadow-md dark:bg-input/30 dark:hover:bg-accent')}>
-              <a href="#skills">Skills</a>
+            <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'w-full md:w-max text-xl drop-shadow-md dark:bg-input/30 dark:hover:bg-accent')} href="#skills">
+              Skills
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem className='w-full md:w-auto'>
-            <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), 'w-full md:w-max text-xl drop-shadow-md dark:bg-input/30 dark:hover:bg-accent')}>
-              <a href="#projects">Projects</a>
+            <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'w-full md:w-max text-xl drop-shadow-md dark:bg-input/30 dark:hover:bg-accent')} href="#projects">
+              Projects
             </NavigationMenuLink>
           </NavigationMenuItem>
         </NavigationMenuList>
@@ -151,48 +147,54 @@ function App() {
       >
         <ExperienceCard
           className='max-w-[600px]'
-          title='IMMERSE Researcher'
-          institution='Brigham Young University'
+          title='Undergraduate Researcher – Pathfinding Algorithms'
+          institution='Brigham Young University (IMMERSE Program, MAGICC Lab)'
           place='Provo, UT'
-          dateRange='May 2025 - July 2025'
+          dateRange='May 2025 - Jul 2025'
           description={[
-            "Participated in the BYU IMMERSE program focused on research opportunities for undergraduate students in Computer Science and Electrical Engineering. I worked on Hexagonal Grid Adaptation of Jump Point Search algorithm."
+            'Collaborated with faculty and graduate researchers to develop a hexagonal grid adaptation of the Jump Point Search (JPS) algorithm, contributing novel insights to pathfinding algorithm research.',
+            'Implemented Python simulations and demos to validate algorithmic behavior, improving team’s ability to evaluate performance on grid-based environments.',
+            'Authored progress documentation and delivered technical presentations, strengthening cross-team knowledge sharing and research visibility.'
           ]}
-          responsibilities={[
-            { text: "Collaborated with a professor from the MAGICC Lab at BYU, and graduate-level researchers on a hexagonal grid adaptation of the Jump Point Search algorithm." },
-            { text: "Documented regular progress updates and participated in team discussions facilitating knowledge and presentations on the research topic." },
-            { text: "Implemented Python demonstrations for the algorithm and contributed with code to a new insight on pathfinding algorithms." },
-          ]}
+          responsibilities={[]}
         />
         <ExperienceCard
           className='max-w-[600px]'
-          title='Online Grader for CSE and WDD courses'
-          institution='Brigham Young University - Idaho & BYU Pathway Worldwide'
-          place='Rexburg, ID (Remote)'
-          dateRange='September 2024 - Present'
+          title='Online Grader – Web Design & Development'
+          institution='Brigham Young University-Idaho'
+          place='Rexburg, ID'
+          dateRange='Apr 2024 - Apr 2026'
           description={[
-            "As an Online Grader, I evaluate and provide feedback on student assignments for Computer Science and Web Development courses. This role has honed my ability to assess code quality and offer constructive criticism."
+            'Assessed and provided actionable feedback on 100+ student assignments per week covering HTML, CSS, JavaScript, and responsive design principles.',
+            'Partnered with instructors to analyze student performance data and refine curriculum outcomes for WDD course offerings.',
+            'Maintained grading consistency and rubric standards across a large student cohort, ensuring equitable and standards-aligned evaluation.'
           ]}
-          responsibilities={[
-            { text: "Provided feedback and graded 100+ students’ web design and development assignments each week. " },
-            { text: "Ensured students achieve proficiency in creating responsive, well-designed, and interactive web pages using HTML, CSS, and JavaScript." },
-            { text: "Collaborated closely with instructors to provide essential data to Web Design and Development (WDD) courses to better achieve learning outcomes." },
-          ]}
+          responsibilities={[]}
         />
         <ExperienceCard
           className='max-w-[600px]'
-          title="Online Teacher Assistant for WDD230"
-          institution="Brigham Young University - Idaho"
-          place="Rexburg, ID"
-          dateRange="April 2023 - July 2024"
+          title='Teaching Assistant – WDD 230: Web Frontend Development I'
+          institution='Brigham Young University-Idaho'
+          place='Rexburg, ID'
+          dateRange='Apr 2023 - Apr 2024'
           description={[
-            "Being a TA has helped me acquire valuable skills which I can use on any project I work on. Troubleshooting is something really important as much as providing support to others. These abilities help me write clean code and think about the accessibility for my projects."
+            'Tutored 20-30 students in front-end development fundamentals including semantic HTML, CSS layouts, and vanilla JavaScript DOM manipulation.',
+            'Diagnosed and resolved student coding issues, reducing debugging turnaround and boosting student confidence and course completion.',
+            'Fostered a collaborative learning environment by facilitating peer discussion, code reviews, and one-on-one mentoring sessions.'
           ]}
-          responsibilities={[
-            { text: "Provided guidance and support to 20+ students in web development using HTML, CSS, and JavaScript." },
-            { text: "Guided students to achieve proficiency in creating responsive, well-designed, and interactive web pages using HTML, CSS, and JavaScript." },
-            { text: "Assisted students in understanding and implementing web development concepts, troubleshoot coding issues, and contribute to a collaborative learning environment." },
+          responsibilities={[]}
+        />
+        <ExperienceCard
+          className='max-w-[600px]'
+          title='Full-Time Volunteer Representative'
+          institution='The Church of Jesus Christ of Latter-day Saints'
+          place='Santa Cruz, Bolivia'
+          dateRange='Jan 2020 - Jan 2022'
+          description={[
+            'Led and mentored teams of 10-20 volunteers as district and zone leader, overseeing scheduling, goal setting, and performance coaching.',
+            'Facilitated structured training sessions to improve volunteer effectiveness, communication, and accountability across multiple districts.'
           ]}
+          responsibilities={[]}
         />
       </SectionCard>
 
@@ -204,37 +206,20 @@ function App() {
         <ExperienceCard
           className='max-w-[750px]'
           title='Bachelor of Science in Computer Science'
-          place='Brigham Young University - Idaho'
-          dateRange='April 2022 - Present'
-          description={['GPA: 3.83/4.00',
-            'My education at BYU-Idaho has provided me with a strong foundation in computer science principles and practical skills. The coursework has equipped me with knowledge in various areas of computer science, preparing me for real-world challenges in the tech industry.',
-            'I am currently studying Computer Science with an emphasis on Machine Learning at Brigham Young University-Idaho. Among the coursework that I have taken, I have learned the application of different data structures and algorithms, and the basics of Object-Oriented Programming. Other useful knowledge I have acquired includes work methodologies like SCRUM and DevOps, as well as web development tools like SASS and front-end libraries.',
-            'Relevant Coursework:'
+          place='Brigham Young University-Idaho'
+          dateRange='Apr 2022 – Apr 2026'
+          description={['GPA: 3.8/4.0',
+            'Relevant Coursework: Machine Learning & Data Science, Full-Stack Web Development, Object-Oriented Programming, Parallel & Concurrent Programming, Database Systems & Design, Financial Accounting, Project Management, Product Development'
           ]}
           responsibilities={[
-            { text: "Web Development (HTML, CSS, SCSS, JavaScript)" },
-            { text: "Database Management" },
-            { text: "Data Structures and Algorithms" },
-            { text: "Parallelism and Concurrency" },
-            { text: "Applied Calculus for Data Analysis" },
-            { text: "Machine Learning" },
-          ]}
-        />
-
-        <ExperienceCard
-          className='max-w-[650px]'
-          title="Minor in Business Management"
-          place="Brigham Young University - Idaho"
-          dateRange="April 2022 - Present"
-          description={[
-            'Being able to complement my Computer Science degree with a Business Management minor allows me to gain a broader perspective on how technology can be applied in business contexts. This combination equips me with both technical skills and business acumen, making me a well-rounded professional ready to tackle challenges in the tech industry.',
-            'Relevant Coursework:'
-          ]}
-          responsibilities={[
-            { text: "Survey of Accounting" },
-            { text: "Business Fundamentals" },
-            { text: "Small Business Management" },
-            { text: "Integrated Business Core (IBC)" },
+            { text: 'Machine Learning & Data Science' },
+            { text: 'Full-Stack Web Development' },
+            { text: 'Object-Oriented Programming' },
+            { text: 'Parallel & Concurrent Programming' },
+            { text: 'Database Systems & Design' },
+            { text: 'Financial Accounting' },
+            { text: 'Project Management' },
+            { text: 'Product Development' },
           ]}
         />
       </SectionCard>
@@ -246,52 +231,58 @@ function App() {
       >
         <Card className='w-full md:w-[280px]'>
           <CardHeader>
-            <CardTitle>Machine Learning & AI</CardTitle>
-          </CardHeader>
-          <CardContent className='mx-auto'>
-            <Skill name="RStudio" icon={<IconChartDots size={32} stroke={1.5} />} level={5} />
-            <Skill name="Pandas" icon={<IconTable size={32} stroke={1.5} />} level={4} />
-            <Skill name="NumPy" icon={<IconMath size={32} stroke={1.5} />} level={4} />
-            <Skill name="Scikit-Learn" icon={<IconBrain size={32} stroke={1.5} />} level={4} />
-            <Skill name="TensorFlow" icon={<IconCpu size={32} stroke={1.5} />} level={3} />
-          </CardContent>
-        </Card>
-        <Card className='w-full md:w-[280px]'>
-          <CardHeader>
-            <CardTitle>Programming Languages</CardTitle>
+            <CardTitle>Languages</CardTitle>
           </CardHeader>
           <CardContent className='mx-auto'>
             <Skill name="Python" icon={<IconBrandPython size={32} stroke={1.5} />} level={5} />
             <Skill name="JavaScript" icon={<IconBrandJavascript size={32} stroke={1.5} />} level={5} />
             <Skill name="TypeScript" icon={<IconBrandTypescript size={32} stroke={1.5} />} level={4} />
             <Skill name="C#" icon={<IconBrandCSharp size={32} stroke={1.5} />} level={4} />
+            <Skill name="Java" icon={<IconBrandNodejs size={32} stroke={1.5} />} level={3} />
+            <Skill name="Kotlin" icon={<IconBrandNodejs size={32} stroke={1.5} />} level={2} />
             <Skill name="Rust" icon={<IconBrandRust size={32} stroke={1.5} />} level={2} />
           </CardContent>
         </Card>
         <Card className='w-full md:w-[280px]'>
           <CardHeader>
-            <CardTitle>Tools & Technologies</CardTitle>
+            <CardTitle>Web & Mobile</CardTitle>
           </CardHeader>
           <CardContent className='mx-auto'>
-            <Skill name="VS Code" icon={<IconBrandVscode size={32} stroke={1.5} />} level={5} />
-            <Skill name="Git & GitHub" icon={<IconBrandGithub size={32} stroke={1.5} />} level={4} />
-            <Skill name="Figma" icon={<IconBrandFigma size={32} stroke={1.5} />} level={4} />
-            <Skill name="Tailwind CSS" icon={<IconBrandTailwind size={32} stroke={1.5} />} level={4} />
             <Skill name="React" icon={<IconBrandReact size={32} stroke={1.5} />} level={4} />
+            <Skill name="Next.js" icon={<IconBrandNodejs size={32} stroke={1.5} />} level={3} />
             <Skill name="Node.js" icon={<IconBrandNodejs size={32} stroke={1.5} />} level={3} />
+            <Skill name="Tailwind CSS" icon={<IconBrandTailwind size={32} stroke={1.5} />} level={4} />
+            <Skill name="SCSS" icon={<IconBrandFigma size={32} stroke={1.5} />} level={3} />
+            <Skill name="Flutter" icon={<IconBrandFigma size={32} stroke={1.5} />} level={2} />
+            <Skill name="Android Studio" icon={<IconBrandFigma size={32} stroke={1.5} />} level={2} />
+            <Skill name="REST APIs" icon={<IconBrandFigma size={32} stroke={1.5} />} level={3} />
           </CardContent>
         </Card>
         <Card className='w-full md:w-[280px]'>
           <CardHeader>
-            <CardTitle>Soft Skills</CardTitle>
+            <CardTitle>ML & Data Science</CardTitle>
           </CardHeader>
           <CardContent className='mx-auto'>
-            <Skill name="Problem Solving" icon={<IconBrain size={32} stroke={1.5} />} level={5} />
-            <Skill name="Teamwork" icon={<IconUsers size={32} stroke={1.5} />} level={5} />
-            <Skill name="Ethical Awareness" icon={<IconGlobe size={32} stroke={1.5} />} level={5} />
-            <Skill name="Project Management" icon={<IconBriefcase size={32} stroke={1.5} />} level={4} />
-            <Skill name="Adaptability" icon={<IconArrowsExchange size={32} stroke={1.5} />} level={4} />
-            <Skill name="Communication" icon={<IconMessages size={32} stroke={1.5} />} level={4} />
+            <Skill name="Pandas" icon={<IconTable size={32} stroke={1.5} />} level={4} />
+            <Skill name="Polars" icon={<IconChartDots size={32} stroke={1.5} />} level={3} />
+            <Skill name="PySpark" icon={<IconCpu size={32} stroke={1.5} />} level={2} />
+            <Skill name="Databricks" icon={<IconCpu size={32} stroke={1.5} />} level={2} />
+            <Skill name="R" icon={<IconChartDots size={32} stroke={1.5} />} level={2} />
+            <Skill name="SQL" icon={<IconTable size={32} stroke={1.5} />} level={3} />
+            <Skill name="OpenAI SDK" icon={<IconBrain size={32} stroke={1.5} />} level={2} />
+            <Skill name="Model Context Protocol (MCP)" icon={<IconBrain size={32} stroke={1.5} />} level={2} />
+          </CardContent>
+        </Card>
+        <Card className='w-full md:w-[280px]'>
+          <CardHeader>
+            <CardTitle>Tools & Platforms</CardTitle>
+          </CardHeader>
+          <CardContent className='mx-auto'>
+            <Skill name="Git" icon={<IconBrandGithub size={32} stroke={1.5} />} level={4} />
+            <Skill name="GitHub" icon={<IconBrandGithub size={32} stroke={1.5} />} level={4} />
+            <Skill name="VS Code" icon={<IconBrandVscode size={32} stroke={1.5} />} level={5} />
+            <Skill name="Cloud Databases" icon={<IconGlobe size={32} stroke={1.5} />} level={3} />
+            <Skill name="Agile/Scrum methodologies" icon={<IconBriefcase size={32} stroke={1.5} />} level={3} />
           </CardContent>
         </Card>
       </SectionCard>
@@ -356,7 +347,7 @@ function App() {
         <a href="https://lucide.dev/" target="_blank" rel="noopener noreferrer">Lucide Icons</a>
         <a href="https://icons8.com" target="_blank" rel="noopener noreferrer">Icons8 Icons</a>
         <a href="https://ui.shadcn.com/" target="_blank" rel="noopener noreferrer">Shadcn UI Components</a>
-        <p>©2025 | Juan Zurita.</p>
+        <p>©{new Date().getFullYear()} | Juan Zurita.</p>
       </footer>
       <Button
         variant="outline"

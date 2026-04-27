@@ -4,10 +4,10 @@ import { ThemeProvider } from '@/components/theme-provider'
 import { Button } from '@/components/ui/button'
 import { ButtonIcon } from '@/components/ui/button-icon'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { ExperienceCard } from '@/components/ui/experience-card'
+import { ExperienceCard } from '@/components/experience-card'
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
-import { ProjectCard } from '@/components/ui/project-card'
-import { SectionCard } from '@/components/ui/section-card'
+import { ProjectCard } from '@/components/project-card'
+import { SectionCard } from '@/components/section-card'
 import { Skill } from '@/components/ui/skill'
 import { cn } from '@/lib/utils'
 import { ChevronUp } from 'lucide-react'
@@ -157,7 +157,7 @@ function App() {
             {link.label}
           </a>
         ))}
-        <p>©2025 | {PERSONAL_INFO.name}.</p>
+        <p>©{new Date().getFullYear()} | {PERSONAL_INFO.name}.</p>
       </footer>
 
       {/* Scroll to Top Button */}
