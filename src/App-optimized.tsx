@@ -10,7 +10,7 @@ import { ProjectCard } from '@/components/project-card'
 import { SectionCard } from '@/components/section-card'
 import { Skill } from '@/components/ui/skill'
 import { cn } from '@/lib/utils'
-import { ChevronUp } from 'lucide-react'
+import { IconChevronUp } from '@tabler/icons-react'
 import {
   EDUCATION,
   EXPERIENCES,
@@ -64,13 +64,13 @@ function App() {
           {NAVIGATION_ITEMS.map((item) => (
             <NavigationMenuItem key={item.id} className="w-full md:w-auto">
               <NavigationMenuLink
-                asChild
                 className={cn(
                   navigationMenuTriggerStyle(),
                   'w-full md:w-max text-xl drop-shadow-md dark:bg-input/30 dark:hover:bg-accent'
                 )}
+                href={item.href}
               >
-                <a href={item.href}>{item.label}</a>
+                {item.label}
               </NavigationMenuLink>
             </NavigationMenuItem>
           ))}
@@ -163,11 +163,11 @@ function App() {
       {/* Scroll to Top Button */}
       <Button
         variant="outline"
-        size="icon-xl"
+        size="icon-lg"
         className="fixed bottom-4 right-4 z-50 cursor-pointer"
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       >
-        <ChevronUp size={32} />
+        <IconChevronUp size={24} stroke={1.5} />
       </Button>
     </ThemeProvider>
   )

@@ -9,7 +9,7 @@ interface ButtonIconProps {
   className?: string
   onClick?: () => void
   variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link"
-  size?: "default" | "sm" | "lg" | "icon" | "icon-sm" | "icon-lg" | "icon-xl" | "icon-xxl"
+  size?: "default" | "xs" | "sm" | "lg" | "icon" | "icon-xs" | "icon-sm" | "icon-lg"
 }
 
 export function ButtonIcon({
@@ -18,7 +18,7 @@ export function ButtonIcon({
   label,
   onClick,
   variant = "default",
-  size = "icon-xxl",
+  size = "icon-lg",
   className,
 }: ButtonIconProps) {
   return (

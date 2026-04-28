@@ -1,4 +1,4 @@
-import { CalendarIcon } from "lucide-react"
+import { IconCalendar } from "@tabler/icons-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { motion } from "motion/react"
 
@@ -26,7 +26,7 @@ function ExperienceCard({ title, institution, place, dateRange, description, res
                 {institution && <CardDescription className="text-sm">{institution}</CardDescription>}
                 {place && <CardDescription className="text-sm">{place}</CardDescription>}
                 <CardDescription className="flex gap-1.5 mx-auto justify-center">
-                    <CalendarIcon size={16} />{dateRange}
+                    <IconCalendar size={16} stroke={1.5} />{dateRange}
                 </CardDescription>
             </CardHeader>
             <CardContent className="text-left">

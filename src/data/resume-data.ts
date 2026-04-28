@@ -215,7 +215,7 @@ export const PROJECTS = [
 export const FOOTER_LINKS = [
   { label: 'Vite', url: 'https://vite.dev/' },
   { label: 'React', url: 'https://react.dev/' },
-  { label: 'Lucide Icons', url: 'https://lucide.dev/' },
+  { label: 'Tabler Icons', url: 'https://tabler.io/icons' },
   { label: 'Icons8 Icons', url: 'https://icons8.com' },
   { label: 'Shadcn UI Components', url: 'https://ui.shadcn.com/' },
 ]

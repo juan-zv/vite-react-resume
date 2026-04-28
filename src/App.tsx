@@ -9,7 +9,7 @@ import { SectionCard } from './components/section-card'
 import { Skill } from './components/ui/skill'
 import { ExperienceCard } from './components/experience-card'
 import { cn } from '@/lib/utils'
-import { 
+import {
   IconBrandLinkedin, 
   IconBrandGithub, 
   IconChevronUp,
@@ -31,6 +31,7 @@ import {
   IconBriefcase
 } from '@tabler/icons-react'
 import { motion, useScroll } from "motion/react"
+import { PROJECTS } from '@/data/resume-data'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -48,12 +49,6 @@ const itemVariants = {
   visible: { opacity: 1, y: 0 }
 };
 
-import habitusImage from '@/assets/habitus.png'
-import ibcReportGeneratorImage from '@/assets/ibc-report-generator.png'
-import combinedValidatorImage from '@/assets/combined-validator.png'
-import dataSciencePortfolioImage from '@/assets/data-science-portfolio.png'
-import membersDataCheckerImage from '@/assets/members-data-checker.png'
-import uiRideImage from '@/assets/u-i-ride.png'
 
 
 function App() {
@@ -307,7 +302,7 @@ function App() {
       <footer className='flex flex-col gap-2 justify-center items-center mt-8 mb-4'>
         <a href="https://vite.dev/" target="_blank" rel="noopener noreferrer">Vite</a>
         <a href="https://react.dev/" target="_blank" rel="noopener noreferrer">React</a>
-        <a href="https://lucide.dev/" target="_blank" rel="noopener noreferrer">Lucide Icons</a>
+        <a href="https://tabler.io/icons" target="_blank" rel="noopener noreferrer">Tabler Icons</a>
         <a href="https://icons8.com" target="_blank" rel="noopener noreferrer">Icons8 Icons</a>
         <a href="https://ui.shadcn.com/" target="_blank" rel="noopener noreferrer">Shadcn UI Components</a>
         <p>©{new Date().getFullYear()} | Juan Zurita.</p>
