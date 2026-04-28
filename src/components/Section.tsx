@@ -11,7 +11,7 @@ type SectionProps = {
   children?: React.ReactNode;
 };
 
-function SectionCard({ id, title, description, children, className }: SectionProps) {
+function Section({ id, title, description, children, className }: SectionProps) {
   return (
     <motion.section
       id={id}
@@ -31,4 +31,4 @@ function SectionCard({ id, title, description, children, className }: SectionPro
   )
 }
 
-export { SectionCard }
+export { Section }

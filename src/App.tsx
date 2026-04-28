@@ -4,10 +4,11 @@ import { ThemeProvider } from '@/components/theme-provider'
 import { Button } from '@/components/ui/button'
 import { ProjectCard } from '@/components/project-card'
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { SectionCard } from '@/components/Section'
+import { StickyNav } from '@/components/StickyNav'
+import { Section } from '@/components/Section'
 import { Skill } from '@/components/Skill'
 import { ExperienceCard } from '@/components/experience-card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
 import {
   IconBrandLinkedin,
@@ -31,7 +32,7 @@ import {
   IconBriefcase
 } from '@tabler/icons-react'
 import { motion, useScroll } from "motion/react"
-import { PROJECTS } from '@/data/resume-data'
+import { PROJECTS, NAVIGATION_ITEMS } from '@/data/resume-data'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -96,45 +97,47 @@ function App() {
         </motion.div>
       </motion.div>
 
-      <NavigationMenu className='mx-auto w-full md:w-auto'>
-        <NavigationMenuList className='flex-col md:flex-row w-full'>
-          <NavigationMenuItem className='w-full md:w-auto'>
-            <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'w-full md:w-max text-xl drop-shadow-md dark:bg-input/30 dark:hover:bg-accent')} href="#about">
-              About
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-          <NavigationMenuItem className='w-full md:w-auto'>
-            <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'w-full md:w-max text-xl drop-shadow-md dark:bg-input/30 dark:hover:bg-accent')} href="#experience">
-              Experience
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-          <NavigationMenuItem className='w-full md:w-auto'>
-            <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'w-full md:w-max text-xl drop-shadow-md dark:bg-input/30 dark:hover:bg-accent')} href="#education">
-              Education
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-          <NavigationMenuItem className='w-full md:w-auto'>
-            <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'w-full md:w-max text-xl drop-shadow-md dark:bg-input/30 dark:hover:bg-accent')} href="#skills">
-              Skills
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-          <NavigationMenuItem className='w-full md:w-auto'>
-            <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'w-full md:w-max text-xl drop-shadow-md dark:bg-input/30 dark:hover:bg-accent')} href="#projects">
-              Projects
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
+      <StickyNav navItems={NAVIGATION_ITEMS}>
+        <NavigationMenu className='mx-auto w-full md:w-auto'>
+          <NavigationMenuList className='flex-col md:flex-row w-full'>
+            <NavigationMenuItem className='w-full md:w-auto'>
+              <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'w-full md:w-max text-xl drop-shadow-md dark:bg-input/30 dark:hover:bg-accent')} href="#about">
+                About
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+            <NavigationMenuItem className='w-full md:w-auto'>
+              <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'w-full md:w-max text-xl drop-shadow-md dark:bg-input/30 dark:hover:bg-accent')} href="#experience">
+                Experience
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+            <NavigationMenuItem className='w-full md:w-auto'>
+              <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'w-full md:w-max text-xl drop-shadow-md dark:bg-input/30 dark:hover:bg-accent')} href="#education">
+                Education
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+            <NavigationMenuItem className='w-full md:w-auto'>
+              <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'w-full md:w-max text-xl drop-shadow-md dark:bg-input/30 dark:hover:bg-accent')} href="#skills">
+                Skills
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+            <NavigationMenuItem className='w-full md:w-auto'>
+              <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'w-full md:w-max text-xl drop-shadow-md dark:bg-input/30 dark:hover:bg-accent')} href="#projects">
+                Projects
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
+      </StickyNav>
 
-      <SectionCard
+      <Section
         id='about'
         title="About Me"
         description="Hi! I'm Juan Zurita, a Computer Science student at BYU-Idaho. I was born in Bolivia 🇧🇴, but when I was 4 years old, my family moved to Spain 🇪🇸, where I grew up and have lived most of my life.
         I'm passionate about technology and AI, which is why I am specializing my Computer Science degree in Machine Learning. I love creating anything that can have a real impact, from algorithmic research to full-stack web applications. I enjoy learning a broad range of topics and I'm continuously looking for new challenges. I built this static React SPA using TypeScript to host my resume and showcase my design abilities. I hope you enjoy it!"
       >
-      </SectionCard>
+      </Section>
 
-      <SectionCard
+      <Section
         id='experience'
         title="Experience"
         className='flex flex-col gap-4'
@@ -190,9 +193,9 @@ function App() {
           ]}
           responsibilities={[]}
         />
-      </SectionCard>
+      </Section>
 
-      <SectionCard
+      <Section
         id='education'
         title="Education"
         className='flex flex-col gap-4'
@@ -216,10 +219,10 @@ function App() {
             { text: 'Product Development' },
           ]}
         />
-      </SectionCard>
+      </Section>
 
       {/* Skills Section */}
-      <SectionCard
+      <Section
         id="skills"
         title="Skills"
         className="flex flex-col sm:flex-row gap-4 justify-center items-stretch"
@@ -280,10 +283,10 @@ function App() {
             <Skill name="Agile/Scrum methodologies" icon={<IconBriefcase size={32} stroke={1.5} />} level={3} />
           </CardContent>
         </Card>
-      </SectionCard>
+      </Section>
 
       {/* Projects Section */}
-      <SectionCard
+      <Section
         id="projects"
         title="Projects"
         className="grid grid-cols-1 md:grid-cols-2 gap-4 justify-items-center"
@@ -298,7 +301,7 @@ function App() {
             liveDemo={project.liveDemo}
           />
         ))}
-      </SectionCard>
+      </Section>
       <footer className='flex flex-col gap-2 justify-center items-center mt-8 mb-4'>
         <a href="https://vite.dev/" target="_blank" rel="noopener noreferrer">Vite</a>
         <a href="https://react.dev/" target="_blank" rel="noopener noreferrer">React</a>
