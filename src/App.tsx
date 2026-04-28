@@ -76,22 +76,22 @@ function App() {
 
         <motion.div variants={itemVariants} className="flex gap-2 justify-center">
           <Button
-            className='mx-1 my-2 mb-4 drop-shadow-lg cursor-pointer w-12 h-12'
+            className='mx-1 my-2 mb-4 drop-shadow-lg cursor-pointer w-18 h-18'
             variant='outline'
-            size='icon'
+            size="icon-lg"
             aria-label="LinkedIn"
             onClick={() => window.open("https://www.linkedin.com/in/juanzuritavasquez", "_blank")}
           >
-            <IconBrandLinkedin size={28} stroke={1.5} />
+            <IconBrandLinkedin className="size-10" stroke={1.5} />
           </Button>
           <Button
-            className='mx-1 my-2 mb-4 drop-shadow-lg cursor-pointer w-24 h-24'
+            className='mx-1 my-2 mb-4 drop-shadow-lg cursor-pointer w-18 h-18'
             variant='outline'
             size='icon-lg'
             aria-label="GitHub"
             onClick={() => window.open("https://github.com/juan-zv", "_blank")}
           >
-            <IconBrandGithub size={48} stroke={2} />
+            <IconBrandGithub className="size-10" stroke={1.5} />
           </Button>
         </motion.div>
       </motion.div>
