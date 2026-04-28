@@ -1,17 +1,17 @@
 import './App.css'
 import { ModeToggle } from '@/components/mode-toggle'
 import { ThemeProvider } from '@/components/theme-provider'
-import { Button } from './components/ui/button'
-import { ProjectCard } from './components/project-card'
-import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from './components/ui/navigation-menu'
-import { Card, CardContent, CardHeader, CardTitle } from './components/ui/card'
-import { SectionCard } from './components/section-card'
-import { Skill } from './components/ui/skill'
-import { ExperienceCard } from './components/experience-card'
+import { Button } from '@/components/ui/button'
+import { ProjectCard } from '@/components/project-card'
+import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { SectionCard } from '@/components/Section'
+import { Skill } from '@/components/Skill'
+import { ExperienceCard } from '@/components/experience-card'
 import { cn } from '@/lib/utils'
 import {
-  IconBrandLinkedin, 
-  IconBrandGithub, 
+  IconBrandLinkedin,
+  IconBrandGithub,
   IconChevronUp,
   IconChartDots,
   IconTable,
@@ -62,7 +62,7 @@ function App() {
       />
       <ModeToggle />
       <Button className='absolute top-4 right-4 drop-shadow-lg cursor-pointer' variant={'outline'} onClick={() => window.open("https://html-resume-juan-zurita.vercel.app/", "_blank")}>Old Version</Button>
-      
+
       <motion.div variants={containerVariants} initial="hidden" animate="visible" className="flex flex-col items-center">
         <motion.img
           variants={itemVariants}
@@ -303,7 +303,6 @@ function App() {
         <a href="https://vite.dev/" target="_blank" rel="noopener noreferrer">Vite</a>
         <a href="https://react.dev/" target="_blank" rel="noopener noreferrer">React</a>
         <a href="https://tabler.io/icons" target="_blank" rel="noopener noreferrer">Tabler Icons</a>
-        <a href="https://icons8.com" target="_blank" rel="noopener noreferrer">Icons8 Icons</a>
         <a href="https://ui.shadcn.com/" target="_blank" rel="noopener noreferrer">Shadcn UI Components</a>
         <p>©{new Date().getFullYear()} | Juan Zurita.</p>
       </footer>
