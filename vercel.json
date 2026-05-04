@@ -15,19 +15,26 @@
   "headers": [
     {
       "source": "/(.*)",
+      "has": [
+        {
+          "type": "header",
+          "key": "Accept",
+          "value": "(?i).*text/markdown.*"
+        }
+      ],
       "headers": [
         {
-          "key": "Link",
-          "value": "</index.md>; rel=\"alternate\"; type=\"text/markdown\""
+          "key": "Content-Type",
+          "value": "text/markdown"
         }
       ]
     },
     {
-      "source": "/index.md",
+      "source": "/(.*)",
       "headers": [
         {
-          "key": "Content-Type",
-          "value": "text/markdown; charset=utf-8"
+          "key": "Link",
+          "value": "</index.md>; rel=\"alternate\"; type=\"text/markdown\""
         }
       ]
     }
