@@ -9,6 +9,10 @@ export const PERSONAL_INFO = {
 I'm passionate about technology and AI, and I love creating anything that can have a real impact in the world. I enjoy learning a broad range of topics and I'm continuously looking for new challenges. I built this site to host my resume and showcase my design abilities.`,
   email: 'juanzurita@byui.edu',
   website: 'https://juanzurita.dev',
+  about2: `Hi! I'm Juan Zurita. I recently graduated from BYU-Idaho with a degree in Computer Science and a focus on Machine Learning. 
+        I built this space to share some of my projects and my resume. Thanks for stopping by, I'd love to connect!. 
+        My journey has taken me from Bolivia to Spain and back again, including two years of volunteer service that shaped how I approach teamwork and leadership.
+        I really enjoy the process of building—whether that's researching pathfinding algorithms, helping students as a TA, or developing full-stack tools with Python and React.        `
 }
 
 export const SOCIAL_LINKS = [

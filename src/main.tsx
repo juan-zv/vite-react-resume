@@ -3,12 +3,15 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 import { Analytics } from '@vercel/analytics/react'
+import { ThemeProvider } from '@/components/theme-provider'
 
 // import AppTest from './App-optimized.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <App />
+    </ThemeProvider>
     <Analytics />
   </StrictMode>,
 )
