@@ -27,7 +27,7 @@ function Skill({ name, logoSrc, icon, level }: SkillProps) {
       {/* Right column: 150px wide, 100px tall with 2 rows */}
       <div className="grid grid-rows-2 gap-1 content-center">
         <span className="font-medium text-sm self-end">{name}</span>
-        <Progress className="w-full h-2 self-start" value={level ? level * 20 : 0} />
+        <Progress aria-label={`${name} level: ${level}/5`} className="w-full h-2 self-start" value={level ? level * 20 : 0} />
       </div>
     </div>
   );

@@ -66,15 +66,15 @@ function App() {
         style={{ scaleX: scrollYProgress }}
       />
       <ModeToggle />
-      <Button className='absolute top-4 right-4 drop-shadow-lg cursor-pointer' variant={'outline'} onClick={() => window.open("https://html-resume-juan-zurita.vercel.app/", "_blank")}>Old Version</Button>
+      {/* <Button className='absolute top-4 right-4 drop-shadow-lg cursor-pointer' variant={'outline'} onClick={() => window.open("https://html-resume-juan-zurita.vercel.app/", "_blank")}>Old Version</Button> */}
 
       <motion.div variants={containerVariants} initial="hidden" animate="visible" className="flex flex-col items-center">
         <motion.img
           variants={itemVariants}
+          fetchPriority='high'
           src="./juan-zurita.webp"
           className="object-cover drop-shadow-lg mx-auto mt-2"
           alt="logo"
-          loading='lazy'
         />
         <motion.h1 variants={itemVariants} className="text-2xl font-bold mt-4">Juan Zurita</motion.h1>
         <motion.h2 variants={itemVariants} className="text-m text-muted-foreground">Software Engineer | AI & ML Enthusiast</motion.h2>
@@ -116,7 +116,7 @@ function App() {
           </NavigationMenuList>
         </NavigationMenu>
       </StickyNav>
-      <main>
+      <main className="flex flex-col flex-1 w-full items-center">
 
         <Section
           id='about'
