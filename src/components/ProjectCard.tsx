@@ -12,7 +12,7 @@ type ProjectCardProps = {
     skills: string[];
 }
 
-export default function ProjectCard({
+export default function ProjectCard2({
     title,
     description,
     imageSrc,

@@ -23,7 +23,7 @@ function Section({ id, title, description, children, className }: SectionProps) 
     >
       <h2 className='my-2.5 text-xl font-semibold tracking-tight'>{title}</h2>
       <Separator className='mb-4 max-w-[600px] mx-auto' />
-      {description && <p className="max-w-[600px] mx-auto text-muted-foreground text-lg mb-4 text-justify">{description}</p>}
+      {description && <p className="max-w-[600px] mx-auto text-muted-foreground text-md mb-4 text-justify">{description}</p>}
       <div className={cn(className)}>
         {children}
       </div>

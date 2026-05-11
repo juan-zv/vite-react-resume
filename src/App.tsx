@@ -2,11 +2,12 @@ import './App.css'
 import { ModeToggle } from '@/components/mode-toggle'
 import { Button } from '@/components/ui/button'
 import { ProjectCard } from '@/components/project-card'
+import ProjectCard2 from '@/components/ProjectCard'
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
 import { StickyNav } from '@/components/StickyNav'
 import { Section } from '@/components/Section'
 import { Skill } from '@/components/Skill'
-import { ExperienceCard } from '@/components/experience-card'
+import { ExperienceCard } from '@/components/ExperienceCard'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
 import SocialLink from '@/components/SocialLink'
@@ -37,6 +38,7 @@ import {
 } from '@tabler/icons-react'
 import { motion, useScroll } from "motion/react"
 import { PROJECTS, NAVIGATION_ITEMS } from '@/data/resume-data'
+import Footer from '@/components/Footer'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -137,12 +139,12 @@ function App() {
             institution='Brigham Young University (IMMERSE Program, MAGICC Lab)'
             place='Provo, UT'
             dateRange='May 2025 - Jul 2025'
-            description={[
-              'Collaborated with faculty and graduate researchers to develop a hexagonal grid adaptation of the Jump Point Search (JPS) algorithm, contributing novel insights to pathfinding algorithm research.',
-              'Implemented Python simulations and demos to validate algorithmic behavior, improving team’s ability to evaluate performance on grid-based environments.',
-              'Authored progress documentation and delivered technical presentations, strengthening cross-team knowledge sharing and research visibility.'
+            description={[]}
+            responsibilities={[
+              { text: 'Collaborated with faculty and graduate researchers to develop a hexagonal grid adaptation of the Jump Point Search (JPS) algorithm, contributing novel insights to pathfinding algorithm research.' },
+              { text: 'Implemented Python simulations and demos to validate algorithmic behavior, improving team’s ability to evaluate performance on grid-based environments.' },
+              { text: 'Authored progress documentation and delivered technical presentations, strengthening cross-team knowledge sharing and research visibility.' }
             ]}
-            responsibilities={[]}
           />
           <ExperienceCard
             className='max-w-[600px]'
@@ -150,12 +152,12 @@ function App() {
             institution='Brigham Young University-Idaho'
             place='Rexburg, ID'
             dateRange='Apr 2024 - Apr 2026'
-            description={[
-              'Assessed and provided actionable feedback on 100+ student assignments per week covering HTML, CSS, JavaScript, and responsive design principles.',
-              'Partnered with instructors to analyze student performance data and refine curriculum outcomes for WDD course offerings.',
-              'Maintained grading consistency and rubric standards across a large student cohort, ensuring equitable and standards-aligned evaluation.'
+            description={[]}
+            responsibilities={[
+              { text: 'Assessed and provided actionable feedback on 100+ student assignments per week covering HTML, CSS, JavaScript, and responsive design principles.' },
+              { text: 'Partnered with instructors to analyze student performance data and refine curriculum outcomes for WDD course offerings.' },
+              { text: 'Maintained grading consistency and rubric standards across a large student cohort, ensuring equitable and standards-aligned evaluation.' }
             ]}
-            responsibilities={[]}
           />
           <ExperienceCard
             className='max-w-[600px]'
@@ -163,12 +165,12 @@ function App() {
             institution='Brigham Young University-Idaho'
             place='Rexburg, ID'
             dateRange='Apr 2023 - Apr 2024'
-            description={[
-              'Tutored 20-30 students in front-end development fundamentals including semantic HTML, CSS layouts, and vanilla JavaScript DOM manipulation.',
-              'Diagnosed and resolved student coding issues, reducing debugging turnaround and boosting student confidence and course completion.',
-              'Fostered a collaborative learning environment by facilitating peer discussion, code reviews, and one-on-one mentoring sessions.'
+            description={[]}
+            responsibilities={[
+              { text: 'Tutored 20-30 students in front-end development fundamentals including semantic HTML, CSS layouts, and vanilla JavaScript DOM manipulation.' },
+              { text: 'Diagnosed and resolved student coding issues, reducing debugging turnaround and boosting student confidence and course completion.' },
+              { text: 'Fostered a collaborative learning environment by facilitating peer discussion, code reviews, and one-on-one mentoring sessions.' }
             ]}
-            responsibilities={[]}
           />
           <ExperienceCard
             className='max-w-[600px]'
@@ -176,11 +178,11 @@ function App() {
             institution='The Church of Jesus Christ of Latter-day Saints'
             place='Santa Cruz, Bolivia'
             dateRange='Jan 2020 - Jan 2022'
-            description={[
-              'Led and mentored teams of 10-20 volunteers as district and zone leader, overseeing scheduling, goal setting, and performance coaching.',
-              'Facilitated structured training sessions to improve volunteer effectiveness, communication, and accountability across multiple districts.'
+            description={[]}
+            responsibilities={[
+              {text: 'Led and mentored teams of 10-20 volunteers as district and zone leader, overseeing scheduling, goal setting, and performance coaching.'},
+              {text: 'Facilitated structured training sessions to improve volunteer effectiveness, communication, and accountability across multiple districts.'},
             ]}
-            responsibilities={[]}
           />
         </Section>
 
@@ -193,7 +195,7 @@ function App() {
             className='max-w-[750px]'
             title='Bachelor of Science in Computer Science'
             place='Brigham Young University-Idaho'
-            dateRange='Apr 2022 – Apr 2026'
+            dateRange='Apr 2022 - Apr 2026'
             description={['GPA: 3.8/4.0',
               'Relevant Coursework: Machine Learning & Data Science, Full-Stack Web Development, Object-Oriented Programming, Parallel & Concurrent Programming, Database Systems & Design, Financial Accounting, Project Management, Product Development'
             ]}
@@ -291,14 +293,25 @@ function App() {
             />
           ))}
         </Section>
+        <Section
+          id='new-projects-section'
+          title='New Projects'
+          className='grid grid-cols-1 md:grid-cols-2 gap-4 justify-items-center'
+        >
+          {PROJECTS.map((project) => (
+            <ProjectCard2
+              key={project.id}
+              title={project.title}
+              description={project.description}
+              skills={project.skills}
+              imageSrc={project.imageSrc}
+              repository={project.repository}
+              liveDemo={project.liveDemo}
+            />
+            ))}
+        </Section>
       </main>
-      <footer className='flex flex-col gap-2 justify-center items-center mt-8 mb-4'>
-        <a href="https://vite.dev/" target="_blank" rel="noopener noreferrer">Vite</a>
-        <a href="https://react.dev/" target="_blank" rel="noopener noreferrer">React</a>
-        <a href="https://tabler.io/icons" target="_blank" rel="noopener noreferrer">Tabler Icons</a>
-        <a href="https://ui.shadcn.com/" target="_blank" rel="noopener noreferrer">Shadcn UI Components</a>
-        <p>©{new Date().getFullYear()} | Juan Zurita.</p>
-      </footer>
+      <Footer />
 
       {/* Scroll to Top Button */}
       <Button

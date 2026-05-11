@@ -4,7 +4,7 @@
 export const PERSONAL_INFO = {
   name: 'Juan Zurita',
   title: 'Computer Science Student',
-  profileImage: './yo-optimized.webp',
+  profileImage: './juan-zurita.webp',
   about: `Hi! I'm Juan Zurita, a Computer Science student at BYU-Idaho. I was born in Bolivia 🇧🇴, but when I was 4 years old, my family moved to Spain 🇪🇸, where I grew up and have lived most of my life.
 I'm passionate about technology and AI, and I love creating anything that can have a real impact in the world. I enjoy learning a broad range of topics and I'm continuously looking for new challenges. I built this site to host my resume and showcase my design abilities.`,
   email: 'juanzurita@byui.edu',
@@ -162,7 +162,6 @@ import habitusImage from '@/assets/habitus.png'
 import ibcReportGeneratorImage from '@/assets/ibc-report-generator.png'
 import combinedValidatorImage from '@/assets/combined-validator.png'
 import dataSciencePortfolioImage from '@/assets/data-science-portfolio.png'
-import membersDataCheckerImage from '@/assets/members-data-checker.png'
 import uiRideImage from '@/assets/u-i-ride.png'
 
 export const PROJECTS = [
@@ -170,14 +169,16 @@ export const PROJECTS = [
     id: 'data-science',
     title: 'Data Science Portfolio',
     description: 'A portfolio showcasing data science projects.',
+    skills: ['Python', 'Pandas', 'R', 'SQL'],
     imageSrc: dataSciencePortfolioImage,
     repository: 'https://github.com/juan-zv/data-science-portfolio/',
     liveDemo: 'https://juan-zv.github.io/data-science-portfolio/',
   },
-    {
+  {
     id: 'store-dashboard',
-    title: 'Data Science Portfolio',
-    description: 'A portfolio showcasing data science projects.',
+    title: 'Data Analysis Dashboard',
+    description: 'A dashboard visualizing data for 5 different convenience stores in Idaho.',
+    skills: ['Python', 'Pandas', 'R', 'SQL'],
     imageSrc: dataSciencePortfolioImage,
     repository: 'https://github.com/juan-zv/data-science-portfolio/',
     liveDemo: 'https://juan-zv.github.io/data-science-portfolio/',
@@ -186,7 +187,8 @@ export const PROJECTS = [
     id: 'movie-matching-webapp',
     title: 'Movie Matching Web App',
     description: "A web application that helps users find movies to watch based on their preferences.",
-    imageSrc: membersDataCheckerImage,
+    skills: ['Python', 'Pandas', 'R', 'SQL'],
+    imageSrc: dataSciencePortfolioImage,
     repository: 'https://github.com/juan-zv/movie-matching-webapp/',
     liveDemo: 'https://juan-zv.github.io/movie-matching-webapp/',
   },
@@ -194,7 +196,8 @@ export const PROJECTS = [
     id: 'life-app',
     title: 'Life App',
     description: "A comprehensive life dashboard application designed to integrate and visualize key personal metrics including finances, habits, and goals.",
-    imageSrc: membersDataCheckerImage,
+    skills: ['Python', 'Pandas', 'R', 'SQL'],
+    imageSrc: dataSciencePortfolioImage,
     repository: 'https://github.com/juan-zv/life-app/',
     liveDemo: 'https://juan-zv.github.io/life-app/',
   },
@@ -202,6 +205,7 @@ export const PROJECTS = [
     id: 'habitus',
     title: 'Habitus Web App',
     description: "Web application developed during BYU-Idaho's hackathon event, created to manage households and roommates efficiently.",
+    skills: ['Python', 'Pandas', 'R', 'SQL'],
     imageSrc: habitusImage,
     repository: 'https://github.com/juan-zv/habitus/',
     liveDemo: 'https://juan-zv.github.io/habitus/',
@@ -210,6 +214,7 @@ export const PROJECTS = [
     id: 'keystone-apparel',
     title: 'Keystone Apparel Sales System',
     description: 'Management system for a small business, developed to handle sales and pre-sales data. This is just a demo version of the system.',
+    skills: ['Python', 'Pandas', 'R', 'SQL'],
     imageSrc: ibcReportGeneratorImage,
     repository: 'https://github.com/juan-zv/keystone-apparel-demo',
     liveDemo: 'https://juan-zv.github.io/keystone-apparel-demo/',
@@ -218,6 +223,7 @@ export const PROJECTS = [
     id: 'combined-validator',
     title: 'Combined Validator',
     description: "A tool for validating multiple pages' HTML and CSS in one go.",
+    skills: ['Python', 'Pandas', 'R', 'SQL'],
     imageSrc: combinedValidatorImage,
     repository: 'https://github.com/juan-zv/combined-validator-vanillajs/',
     liveDemo: 'https://juan-zv.github.io/combined-validator-vanillajs/',
@@ -226,6 +232,7 @@ export const PROJECTS = [
     id: 'ui-ride',
     title: 'U&I Ride',
     description: 'Mobile app concept aimed at optimizing ride-sharing services in the Idaho-Utah area. Started developing CSS for future components.',
+    skills: ['Python', 'Pandas', 'R', 'SQL'],
     imageSrc: uiRideImage,
     repository: 'https://github.com/juan-zv/iride-web-app/',
     liveDemo: 'https://juan-zv.github.io/iride-web-app/',
