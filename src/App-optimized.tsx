@@ -1,13 +1,14 @@
 import './App.css'
 import { ModeToggle } from '@/components/mode-toggle'
-import { ThemeProvider } from '@/components/theme-provider'
 import { Button } from '@/components/ui/button'
 import { ButtonIcon } from '@/components/ui/button-icon'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { ExperienceCard } from '@/components/ExperienceCard'
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
-import { ProjectCard } from '@/components/project-card'
+import { StickyNav } from '@/components/StickyNav'
+import ProjectCard from '@/components/ProjectCard'
 import { Section as SectionCard } from '@/components/Section'
+import Footer from '@/components/Footer'
 import { Skill } from '@/components/Skill'
 import { cn } from '@/lib/utils'
 import { IconChevronUp } from '@tabler/icons-react'
@@ -15,7 +16,6 @@ import {
   EDUCATION,
   EXPERIENCES,
   EXTERNAL_LINKS,
-  FOOTER_LINKS,
   NAVIGATION_ITEMS,
   PERSONAL_INFO,
   PROJECTS,
@@ -25,7 +25,7 @@ import {
 
 function App() {
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+    <>
       {/* Header Section */}
       <ModeToggle />
       <Button
@@ -39,9 +39,9 @@ function App() {
       {/* Profile Section */}
       <img
         src={PERSONAL_INFO.profileImage}
-        className="object-cover rounded-lg drop-shadow-2xl mx-auto mt-2"
+        className="object-cover drop-shadow-lg mx-auto mt-2"
         alt={`${PERSONAL_INFO.name} profile`}
-        loading="lazy"
+        fetchPriority="high"
       />
       <h1 className="text-2xl font-bold">{PERSONAL_INFO.name}</h1>
       <h2 className="text-m text-muted-foreground">{PERSONAL_INFO.title}</h2>
@@ -59,26 +59,29 @@ function App() {
       ))}
 
       {/* Navigation Menu */}
-      <NavigationMenu className="mx-auto w-full md:w-auto">
-        <NavigationMenuList className="flex-col md:flex-row w-full">
-          {NAVIGATION_ITEMS.map((item) => (
-            <NavigationMenuItem key={item.id} className="w-full md:w-auto">
-              <NavigationMenuLink
-                className={cn(
-                  navigationMenuTriggerStyle(),
-                  'w-full md:w-max text-xl drop-shadow-md dark:bg-input/30 dark:hover:bg-accent'
-                )}
-                href={item.href}
-              >
-                {item.label}
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-          ))}
-        </NavigationMenuList>
-      </NavigationMenu>
+      <StickyNav navItems={NAVIGATION_ITEMS}>
+        <NavigationMenu className="mx-auto w-full md:w-auto">
+          <NavigationMenuList className="flex-col md:flex-row w-full">
+            {NAVIGATION_ITEMS.map((item) => (
+              <NavigationMenuItem key={item.id} className="w-full md:w-auto">
+                <NavigationMenuLink
+                  className={cn(
+                    navigationMenuTriggerStyle(),
+                    'w-full md:w-max text-xl drop-shadow-md dark:bg-input/30 dark:hover:bg-accent'
+                  )}
+                  href={item.href}
+                >
+                  {item.label}
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
+      </StickyNav>
+      <main className="flex flex-col flex-1 w-full items-center">
 
       {/* About Section */}
-      <SectionCard id="about" title="About Me" description={PERSONAL_INFO.about} />
+      <SectionCard id="about" title="About Me" description={PERSONAL_INFO.about2} />
 
       {/* Experience Section */}
       <SectionCard id="experience" title="Experience" className="flex flex-col gap-4">
@@ -90,8 +93,8 @@ function App() {
             institution={exp.institution}
             place={exp.place}
             dateRange={exp.dateRange}
-            description={exp.description}
-            responsibilities={exp.responsibilities}
+            description={[]}
+            responsibilities={exp.description.map(desc => ({ text: desc }))}
           />
         ))}
       </SectionCard>
@@ -144,32 +147,28 @@ function App() {
             key={project.id}
             title={project.title}
             description={project.description}
+            skills={project.skills}
             imageSrc={project.imageSrc}
             repository={project.repository}
+            liveDemo={project.liveDemo}
           />
         ))}
       </SectionCard>
+      </main>
 
       {/* Footer */}
-      <footer className="flex flex-col gap-2 justify-center items-center mt-8 mb-4">
-        {FOOTER_LINKS.map((link) => (
-          <a key={link.label} href={link.url} target="_blank" rel="noopener noreferrer">
-            {link.label}
-          </a>
-        ))}
-        <p>©{new Date().getFullYear()} | {PERSONAL_INFO.name}.</p>
-      </footer>
+      <Footer />
 
       {/* Scroll to Top Button */}
       <Button
+        aria-label='Scroll to top'
         variant="outline"
-        size="icon-lg"
-        className="fixed bottom-4 right-4 z-50 cursor-pointer"
+        className="fixed bottom-4 right-4 z-50 cursor-pointer w-14 h-14"
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       >
-        <IconChevronUp size={24} stroke={1.5} />
+        <IconChevronUp size={32} stroke={1.5} />
       </Button>
-    </ThemeProvider>
+    </>
   )
 }
 

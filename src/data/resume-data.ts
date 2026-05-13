@@ -3,7 +3,7 @@
 
 export const PERSONAL_INFO = {
   name: 'Juan Zurita',
-  title: 'Computer Science Student',
+  title: 'Software Engineer | AI & ML Enthusiast',
   profileImage: './juan-zurita.webp',
   about: `Hi! I'm Juan Zurita, a Computer Science student at BYU-Idaho. I was born in Bolivia 🇧🇴, but when I was 4 years old, my family moved to Spain 🇪🇸, where I grew up and have lived most of my life.
 I'm passionate about technology and AI, and I love creating anything that can have a real impact in the world. I enjoy learning a broad range of topics and I'm continuously looking for new challenges. I built this site to host my resume and showcase my design abilities.`,

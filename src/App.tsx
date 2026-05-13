@@ -1,8 +1,7 @@
 import './App.css'
 import { ModeToggle } from '@/components/mode-toggle'
 import { Button } from '@/components/ui/button'
-import { ProjectCard } from '@/components/project-card'
-import ProjectCard2 from '@/components/ProjectCard'
+import ProjectCard from '@/components/ProjectCard'
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
 import { StickyNav } from '@/components/StickyNav'
 import { Section } from '@/components/Section'
@@ -287,28 +286,12 @@ function App() {
               key={project.id}
               title={project.title}
               description={project.description}
-              imageSrc={project.imageSrc}
-              repository={project.repository}
-              liveDemo={project.liveDemo}
-            />
-          ))}
-        </Section>
-        <Section
-          id='new-projects-section'
-          title='New Projects'
-          className='grid grid-cols-1 md:grid-cols-2 gap-4 justify-items-center'
-        >
-          {PROJECTS.map((project) => (
-            <ProjectCard2
-              key={project.id}
-              title={project.title}
-              description={project.description}
               skills={project.skills}
               imageSrc={project.imageSrc}
               repository={project.repository}
               liveDemo={project.liveDemo}
             />
-            ))}
+          ))}
         </Section>
       </main>
       <Footer />
