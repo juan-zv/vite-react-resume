@@ -47,7 +47,7 @@ export const NAVIGATION_ITEMS = [
 export const EXPERIENCES = [
   {
     id: 'immerse',
-    title: 'Undergraduate Researcher – Pathfinding Algorithms',
+    title: 'Undergraduate Researcher - Pathfinding Algorithms',
     institution: 'Brigham Young University (IMMERSE Program, MAGICC Lab)',
     place: 'Provo, UT',
     dateRange: 'May 2025 - Jul 2025',
@@ -60,7 +60,7 @@ export const EXPERIENCES = [
   },
   {
     id: 'online-grader',
-    title: 'Online Grader – Web Design & Development',
+    title: 'Online Grader - Web Design & Development',
     institution: 'Brigham Young University-Idaho',
     place: 'Rexburg, ID',
     dateRange: 'Apr 2024 - Apr 2026',
@@ -73,7 +73,7 @@ export const EXPERIENCES = [
   },
   {
     id: 'teaching-assistant',
-    title: 'Teaching Assistant – WDD 230: Web Frontend Development I',
+    title: 'Teaching Assistant - WDD 230: Web Frontend Development I',
     institution: 'Brigham Young University-Idaho',
     place: 'Rexburg, ID',
     dateRange: 'Apr 2023 - Apr 2024',
@@ -178,7 +178,7 @@ export const PROJECTS = [
     id: 'store-dashboard',
     title: 'Data Analysis Dashboard',
     description: 'A dashboard visualizing data for 5 different convenience stores in Idaho.',
-    skills: ['Python', 'Pandas', 'R', 'SQL'],
+    skills: ['Python', 'Numpy', 'Pandas', 'Plotly', 'Scikit-learn', 'SQL', 'YAML', 'Quarto', 'Python Notebooks'],
     imageSrc: dataSciencePortfolioImage,
     repository: 'https://github.com/juan-zv/data-science-portfolio/',
     liveDemo: 'https://juan-zv.github.io/data-science-portfolio/',
@@ -187,27 +187,27 @@ export const PROJECTS = [
     id: 'movie-matching-webapp',
     title: 'Movie Matching Web App',
     description: "A web application that helps users find movies to watch based on their preferences.",
-    skills: ['Python', 'Pandas', 'R', 'SQL'],
+    skills: ['TypeScript', 'Vite', 'React', 'Shadcn/ui', 'Tailwind CSS', 'PostgreSQL', 'Framer Motion', 'TMDB API', 'REST APIs'],
     imageSrc: dataSciencePortfolioImage,
     repository: 'https://github.com/juan-zv/movie-matching-webapp/',
-    liveDemo: 'https://juan-zv.github.io/movie-matching-webapp/',
+    liveDemo: 'https://movie-matching-webapp.vercel.app/',
   },
   {
     id: 'life-app',
     title: 'Life App',
     description: "A comprehensive life dashboard application designed to integrate and visualize key personal metrics including finances, habits, and goals.",
-    skills: ['Python', 'Pandas', 'R', 'SQL'],
+    skills: ['Hackathon Project', 'TypeScript', 'Next.js', 'Shadcn/ui', 'Tailwind CSS', 'PostgreSQL', 'Clerk', 'REST APIs'],
     imageSrc: dataSciencePortfolioImage,
-    repository: 'https://github.com/juan-zv/life-app/',
-    liveDemo: 'https://juan-zv.github.io/life-app/',
+    repository: 'https://github.com/juan-zv/life-app-hackathon',
+    liveDemo: 'https://life-app-hackathon.vercel.app/',
   },
   {
     id: 'habitus',
     title: 'Habitus Web App',
     description: "Web application developed during BYU-Idaho's hackathon event, created to manage households and roommates efficiently.",
-    skills: ['Python', 'Pandas', 'R', 'SQL'],
+    skills: ['Hackathon Project', 'TypeScript', 'Vite', 'React', 'Tailwind CSS', 'Supabase', 'Shadcn/ui', 'REST APIs'],
     imageSrc: habitusImage,
-    repository: 'https://github.com/juan-zv/habitus/',
+    repository: 'https://github.com/juan-zv/habitus',
     liveDemo: 'https://juan-zv.github.io/habitus/',
   },
   {
@@ -231,22 +231,10 @@ export const PROJECTS = [
   {
     id: 'ui-ride',
     title: 'U&I Ride',
-    description: 'Mobile app concept aimed at optimizing ride-sharing services in the Idaho-Utah area. Started developing CSS for future components.',
-    skills: ['Python', 'Pandas', 'R', 'SQL'],
+    description: 'Web app concept aimed at optimizing ride-sharing services in the Idaho-Utah area. Started developing CSS for future components.',
+    skills: ['TypeScript', 'Vite', 'React', 'Tailwind CSS', 'Supabase', 'Shadcn/ui', 'REST APIs'],
     imageSrc: uiRideImage,
-    repository: 'https://github.com/juan-zv/iride-web-app/',
+    repository: 'https://github.com/juan-zv/u-i-ride-alpha',
     liveDemo: 'https://juan-zv.github.io/iride-web-app/',
   },
 ]
-
-export const FOOTER_LINKS = [
-  { label: 'Vite', url: 'https://vite.dev/' },
-  { label: 'React', url: 'https://react.dev/' },
-  { label: 'Tabler Icons', url: 'https://tabler.io/icons' },
-  { label: 'Icons8 Icons', url: 'https://icons8.com' },
-  { label: 'Shadcn UI Components', url: 'https://ui.shadcn.com/' },
-]
-
-export const EXTERNAL_LINKS = {
-  oldVersion: 'https://html-resume-juan-zurita.vercel.app/',
-}

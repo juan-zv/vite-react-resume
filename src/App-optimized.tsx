@@ -15,7 +15,6 @@ import { IconChevronUp } from '@tabler/icons-react'
 import {
   EDUCATION,
   EXPERIENCES,
-  EXTERNAL_LINKS,
   NAVIGATION_ITEMS,
   PERSONAL_INFO,
   PROJECTS,
@@ -28,14 +27,7 @@ function App() {
     <>
       {/* Header Section */}
       <ModeToggle />
-      <Button
-        className="absolute top-4 right-4 drop-shadow-lg cursor-pointer"
-        variant="outline"
-        onClick={() => window.open(EXTERNAL_LINKS.oldVersion, '_blank')}
-      >
-        Old Version
-      </Button>
-
+      
       {/* Profile Section */}
       <img
         src={PERSONAL_INFO.profileImage}
