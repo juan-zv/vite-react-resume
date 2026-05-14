@@ -10,6 +10,7 @@ import {
 } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from "@/components/ui/badge";
+import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from '@/lib/utils'
 
 type ProjectCardProps = React.ComponentProps<"div"> & {
@@ -31,6 +32,8 @@ export default function ProjectCard({
     className,
 }: ProjectCardProps) {
     const [isImageOpen, setIsImageOpen] = useState(false)
+    const [isImageLoaded, setIsImageLoaded] = useState(false)
+    const [imageError, setImageError] = useState(false)
 
     return (
         <>
@@ -38,13 +41,29 @@ export default function ProjectCard({
                 <Card className="hover:bg-accent hover:text-accent-foreground duration-500 h-full flex flex-col">
                 <CardHeader className="pb-2">
                     <CardTitle className="mb-2">{title}</CardTitle>
-                    {imageSrc && (
-                        <img 
-                            className="w-full h-auto object-cover rounded-md cursor-pointer hover:opacity-80 transition-opacity duration-500" 
-                            src={imageSrc} 
-                            alt={title || 'Project image'}
-                            onClick={() => setIsImageOpen(true)}
-                        />
+                    {imageSrc && !imageError && (
+                        <div className="relative w-full aspect-video rounded-md overflow-hidden bg-muted mb-2 group">
+                            {!isImageLoaded && (
+                                <Skeleton className="absolute inset-0 w-full h-full" />
+                            )}
+                            <img 
+                                className={cn(
+                                    "w-full h-full object-cover cursor-pointer transition-all duration-500 group-hover:scale-105",
+                                    isImageLoaded ? "opacity-100" : "opacity-0"
+                                )}
+                                src={imageSrc} 
+                                alt={title || 'Project image'}
+                                loading="lazy"
+                                onLoad={() => setIsImageLoaded(true)}
+                                onError={() => setImageError(true)}
+                                onClick={() => setIsImageOpen(true)}
+                            />
+                        </div>
+                    )}
+                    {imageSrc && imageError && (
+                        <div className="w-full aspect-video rounded-md bg-muted flex items-center justify-center mb-2 text-muted-foreground text-sm border border-border/50">
+                            Image unavailable
+                        </div>
                     )}
                     <CardDescription>{description}</CardDescription>
                 </CardHeader>

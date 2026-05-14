@@ -157,12 +157,7 @@ export const SKILLS = {
   ],
 }
 
-// Import paths for project images
-import habitusImage from '@/assets/habitus.png'
-import ibcReportGeneratorImage from '@/assets/ibc-report-generator.png'
-import combinedValidatorImage from '@/assets/combined-validator.png'
-import dataSciencePortfolioImage from '@/assets/data-science-portfolio.png'
-import uiRideImage from '@/assets/u-i-ride.png'
+const getScreenshot = (url: string) => url ? `https://api.microlink.io/?url=${url}&screenshot&meta=false&embed=screenshot.url` : '';
 
 export const PROJECTS = [
   {
@@ -170,7 +165,7 @@ export const PROJECTS = [
     title: 'Data Science Portfolio',
     description: 'A portfolio showcasing data science projects.',
     skills: ['Python', 'Pandas', 'R', 'SQL'],
-    imageSrc: dataSciencePortfolioImage,
+    imageSrc: getScreenshot('https://juan-zv.github.io/data-science-portfolio/'),
     repository: 'https://github.com/juan-zv/data-science-portfolio/',
     liveDemo: 'https://juan-zv.github.io/data-science-portfolio/',
   },
@@ -179,7 +174,7 @@ export const PROJECTS = [
     title: 'Data Analysis Dashboard',
     description: 'A dashboard visualizing data for 5 different convenience stores in Idaho.',
     skills: ['Python', 'Numpy', 'Pandas', 'Plotly', 'Scikit-learn', 'SQL', 'YAML', 'Quarto', 'Python Notebooks'],
-    imageSrc: dataSciencePortfolioImage,
+    imageSrc: getScreenshot('https://juan-zv.github.io/data-science-portfolio/'),
     repository: 'https://github.com/juan-zv/data-science-portfolio/',
     liveDemo: 'https://juan-zv.github.io/data-science-portfolio/',
   },
@@ -188,7 +183,7 @@ export const PROJECTS = [
     title: 'Movie Matching Web App',
     description: "A web application that helps users find movies to watch based on their preferences.",
     skills: ['TypeScript', 'Vite', 'React', 'Shadcn/ui', 'Tailwind CSS', 'PostgreSQL', 'Framer Motion', 'TMDB API', 'REST APIs'],
-    imageSrc: dataSciencePortfolioImage,
+    imageSrc: getScreenshot('https://movie-matching-webapp.vercel.app/'),
     repository: 'https://github.com/juan-zv/movie-matching-webapp/',
     liveDemo: 'https://movie-matching-webapp.vercel.app/',
   },
@@ -197,7 +192,7 @@ export const PROJECTS = [
     title: 'Life App',
     description: "A comprehensive life dashboard application designed to integrate and visualize key personal metrics including finances, habits, and goals.",
     skills: ['Hackathon Project', 'TypeScript', 'Next.js', 'Shadcn/ui', 'Tailwind CSS', 'PostgreSQL', 'Clerk', 'REST APIs'],
-    imageSrc: dataSciencePortfolioImage,
+    imageSrc: getScreenshot('https://life-app-hackathon.vercel.app/'),
     repository: 'https://github.com/juan-zv/life-app-hackathon',
     liveDemo: 'https://life-app-hackathon.vercel.app/',
   },
@@ -206,7 +201,7 @@ export const PROJECTS = [
     title: 'Habitus Web App',
     description: "Web application developed during BYU-Idaho's hackathon event, created to manage households and roommates efficiently.",
     skills: ['Hackathon Project', 'TypeScript', 'Vite', 'React', 'Tailwind CSS', 'Supabase', 'Shadcn/ui', 'REST APIs'],
-    imageSrc: habitusImage,
+    imageSrc: getScreenshot('https://juan-zv.github.io/habitus/'),
     repository: 'https://github.com/juan-zv/habitus',
     liveDemo: 'https://juan-zv.github.io/habitus/',
   },
@@ -215,7 +210,7 @@ export const PROJECTS = [
     title: 'Keystone Apparel Sales System',
     description: 'Management system for a small business, developed to handle sales and pre-sales data. This is just a demo version of the system.',
     skills: ['Python', 'Pandas', 'R', 'SQL'],
-    imageSrc: ibcReportGeneratorImage,
+    imageSrc: getScreenshot('https://juan-zv.github.io/keystone-apparel-demo/'),
     repository: 'https://github.com/juan-zv/keystone-apparel-demo',
     liveDemo: 'https://juan-zv.github.io/keystone-apparel-demo/',
   },
@@ -224,7 +219,7 @@ export const PROJECTS = [
     title: 'Combined Validator',
     description: "A tool for validating multiple pages' HTML and CSS in one go.",
     skills: ['Python', 'Pandas', 'R', 'SQL'],
-    imageSrc: combinedValidatorImage,
+    imageSrc: getScreenshot('https://juan-zv.github.io/combined-validator-vanillajs/'),
     repository: 'https://github.com/juan-zv/combined-validator-vanillajs/',
     liveDemo: 'https://juan-zv.github.io/combined-validator-vanillajs/',
   },
@@ -233,7 +228,7 @@ export const PROJECTS = [
     title: 'U&I Ride',
     description: 'Web app concept aimed at optimizing ride-sharing services in the Idaho-Utah area. Started developing CSS for future components.',
     skills: ['TypeScript', 'Vite', 'React', 'Tailwind CSS', 'Supabase', 'Shadcn/ui', 'REST APIs'],
-    imageSrc: uiRideImage,
+    imageSrc: getScreenshot('https://juan-zv.github.io/iride-web-app/'),
     repository: 'https://github.com/juan-zv/u-i-ride-alpha',
     liveDemo: 'https://juan-zv.github.io/iride-web-app/',
   },
