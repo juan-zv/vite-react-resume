@@ -5,39 +5,18 @@ import ProjectCard from '@/components/ProjectCard'
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
 import { StickyNav } from '@/components/StickyNav'
 import { Section } from '@/components/Section'
-import { Skill } from '@/components/Skill'
 import { ExperienceCard } from '@/components/ExperienceCard'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
 import SocialLink from '@/components/SocialLink'
 import {
   IconBrandLinkedin,
   IconBrandGithub,
   IconChevronUp,
-  IconChartDots,
-  IconTable,
-  IconBrain,
-  IconCpu,
-  IconCloud,
-  IconBrandPython,
-  IconBrandJavascript,
-  IconBrandTypescript,
-  IconBrandCSharp,
-  IconBrandFlutter,
-  IconBrandAndroid,
-  IconBrandRust,
-  IconBrandVscode,
-  IconBrandFigma,
-  IconBrandGit,
-  IconBrandTailwind,
-  IconBrandReact,
-  IconBrandNodejs,
-  IconBrandOpenai,
-  IconBriefcase
 } from '@tabler/icons-react'
 import { motion, useScroll } from "motion/react"
-import { PROJECTS, NAVIGATION_ITEMS } from '@/data/resume-data'
+import { PROJECTS, NAVIGATION_ITEMS, SKILLS } from '@/data/resume-data'
 import Footer from '@/components/Footer'
+import SkillSet from '@/components/SkillSet'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -195,7 +174,8 @@ function App() {
             title='Bachelor of Science in Computer Science'
             place='Brigham Young University-Idaho'
             dateRange='Apr 2022 - Apr 2026'
-            description={['GPA: 3.8/4.0',
+            gpa="3.8/4.0"
+            description={[
               'Relevant Coursework: Machine Learning & Data Science, Full-Stack Web Development, Object-Oriented Programming, Parallel & Concurrent Programming, Database Systems & Design, Financial Accounting, Project Management, Product Development'
             ]}
             responsibilities={[
@@ -215,66 +195,12 @@ function App() {
         <Section
           id="skills"
           title="Skills"
-          className="flex flex-col sm:flex-row gap-4 justify-center items-stretch"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-center items-stretch"
         >
-          <Card className='w-full md:w-[280px]'>
-            <CardHeader>
-              <CardTitle>Languages</CardTitle>
-            </CardHeader>
-            <CardContent className='mx-auto'>
-              <Skill name="Python" icon={<IconBrandPython size={32} stroke={1.5} />} level={5} />
-              <Skill name="JavaScript" icon={<IconBrandJavascript size={32} stroke={1.5} />} level={5} />
-              <Skill name="TypeScript" icon={<IconBrandTypescript size={32} stroke={1.5} />} level={4} />
-              <Skill name="C#" icon={<IconBrandCSharp size={32} stroke={1.5} />} level={4} />
-              <Skill name="Java" icon={<IconBrandNodejs size={32} stroke={1.5} />} level={3} />
-              <Skill name="Kotlin" icon={<IconBrandNodejs size={32} stroke={1.5} />} level={2} />
-              <Skill name="Rust" icon={<IconBrandRust size={32} stroke={1.5} />} level={2} />
-            </CardContent>
-          </Card>
-          <Card className='w-full md:w-[280px]'>
-            <CardHeader>
-              <CardTitle>Web & Mobile</CardTitle>
-            </CardHeader>
-            <CardContent className='mx-auto'>
-              <Skill name="React" icon={<IconBrandReact size={32} stroke={1.5} />} level={4} />
-              <Skill name="Next.js" icon={<IconBrandNodejs size={32} stroke={1.5} />} level={3} />
-              <Skill name="Node.js" icon={<IconBrandNodejs size={32} stroke={1.5} />} level={3} />
-              <Skill name="Tailwind CSS" icon={<IconBrandTailwind size={32} stroke={1.5} />} level={4} />
-              <Skill name="SCSS" icon={<IconBrandFigma size={32} stroke={1.5} />} level={3} />
-              <Skill name="Flutter" icon={<IconBrandFlutter size={32} stroke={1.5} />} level={2} />
-              <Skill name="Android Studio" icon={<IconBrandAndroid size={32} stroke={1.5} />} level={2} />
-              <Skill name="REST APIs" icon={<IconBrandFigma size={32} stroke={1.5} />} level={3} />
-            </CardContent>
-          </Card>
-          <Card className='w-full md:w-[280px]'>
-            <CardHeader>
-              <CardTitle>ML & Data Science</CardTitle>
-            </CardHeader>
-            <CardContent className='mx-auto'>
-              <Skill name="Pandas" icon={<IconTable size={32} stroke={1.5} />} level={4} />
-              <Skill name="Polars" icon={<IconChartDots size={32} stroke={1.5} />} level={3} />
-              <Skill name="PySpark" icon={<IconCpu size={32} stroke={1.5} />} level={2} />
-              <Skill name="Databricks" icon={<IconCpu size={32} stroke={1.5} />} level={2} />
-              <Skill name="R" icon={<IconChartDots size={32} stroke={1.5} />} level={2} />
-              <Skill name="SQL" icon={<IconTable size={32} stroke={1.5} />} level={3} />
-              <Skill name="OpenAI SDK" icon={<IconBrandOpenai size={32} stroke={1.5} />} level={2} />
-              <Skill name="Model Context Protocol (MCP)" icon={<IconBrain size={32} stroke={1.5} />} level={2} />
-            </CardContent>
-          </Card>
-          <Card className='w-full md:w-[280px]'>
-            <CardHeader>
-              <CardTitle>Tools & Platforms</CardTitle>
-            </CardHeader>
-            <CardContent className='mx-auto'>
-              <Skill name="Git" icon={<IconBrandGit size={32} stroke={1.5} />} level={4} />
-              <Skill name="GitHub" icon={<IconBrandGithub size={32} stroke={1.5} />} level={4} />
-              <Skill name="VS Code" icon={<IconBrandVscode size={32} stroke={1.5} />} level={5} />
-              <Skill name="Cloud Databases" icon={<IconCloud size={32} stroke={1.5} />} level={3} />
-              <Skill name="Agile/Scrum methodologies" icon={<IconBriefcase size={32} stroke={1.5} />} level={3} />
-            </CardContent>
-          </Card>
+          {Object.entries(SKILLS).map(([category, skills]) => (
+            <SkillSet key={category} title={category} skills={skills} />
+          ))}
         </Section>
-
         {/* Projects Section */}
         <Section
           id="projects"

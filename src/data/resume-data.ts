@@ -1,6 +1,38 @@
 // Resume Data Constants
 // All content for the portfolio/resume site
 
+import {
+  // Languages
+  IconBrandPython,
+  IconBrandJavascript,
+  IconBrandTypescript,
+  IconBrandCSharp,
+  IconBrandRust,
+  // Web & Mobile
+  IconBrandReact,
+  IconBrandNextjs,
+  IconBrandNodejs,
+  IconBrandTailwind,
+  IconBrandSass,
+  IconBrandFlutter,
+  IconBrandAndroid,
+  IconApi,
+  // ML & Data Science
+  IconChartBar,
+  IconSparkles,
+  IconBrandDatabricks,
+  IconCircleLetterR,
+  IconSql,
+  IconBrandOpenai,
+  IconAi,
+  // Tools & Platforms
+  IconBrandGit,
+  IconBrandGithub,
+  IconBrandVscode,
+  IconCloud,
+  IconLayoutKanban,
+} from "@tabler/icons-react"
+
 export const PERSONAL_INFO = {
   name: 'Juan Zurita',
   title: 'Software Engineer | AI & ML Enthusiast',
@@ -27,13 +59,7 @@ export const SOCIAL_LINKS = [
     label: 'GitHub',
     url: 'https://github.com/juan-zv',
     icon: './github.svg',
-  },
-  {
-    id: 'website',
-    label: 'Website',
-    url: 'https://juanzurita.dev',
-    icon: './website.svg',
-  },
+  }
 ]
 
 export const NAVIGATION_ITEMS = [
@@ -120,40 +146,38 @@ export const EDUCATION = {
 
 export const SKILLS = {
   'Languages': [
-    { name: 'Python', logoSrc: 'https://img.icons8.com/ios-filled/100/python.png', level: 5 },
-    { name: 'JavaScript', logoSrc: 'https://img.icons8.com/ios-filled/100/javascript.png', level: 5 },
-    { name: 'TypeScript', logoSrc: 'https://img.icons8.com/ios-filled/100/typescript.png', level: 4 },
-    { name: 'C#', logoSrc: 'https://img.icons8.com/ios-filled/100/c-sharp-logo.png', level: 4 },
-    { name: 'Java', logoSrc: 'https://img.icons8.com/ios-filled/100/java-coffee-cup-logo.png', level: 3 },
-    { name: 'Kotlin', logoSrc: 'https://img.icons8.com/color/96/kotlin.png', level: 2 },
-    { name: 'Rust', logoSrc: 'https://img.icons8.com/external-tal-revivo-bold-tal-revivo/96/external-rust-is-a-multi-paradigm-system-programming-language-logo-bold-tal-revivo.png', level: 2 },
+    { name: 'Python', icon: IconBrandPython, level: 5 },
+    { name: 'JavaScript', icon: IconBrandJavascript, level: 5 },
+    { name: 'TypeScript', icon: IconBrandTypescript, level: 4 },
+    { name: 'C#', icon: IconBrandCSharp, level: 4 },
+    { name: 'Rust', icon: IconBrandRust, level: 2 },
   ],
   'Web & Mobile': [
-    { name: 'React', logoSrc: 'https://img.icons8.com/ios-glyphs/90/react.png', level: 4 },
-    { name: 'Next.js', logoSrc: 'https://img.icons8.com/ios-filled/100/nextjs.png', level: 3 },
-    { name: 'Node.js', logoSrc: 'https://img.icons8.com/windows/96/nodejs.png', level: 3 },
-    { name: 'Tailwind CSS', logoSrc: 'https://img.icons8.com/material-outlined/96/tailwind_css.png', level: 4 },
-    { name: 'SCSS', logoSrc: 'https://img.icons8.com/color/96/sass.png', level: 3 },
-    { name: 'Flutter', logoSrc: 'https://img.icons8.com/color/96/flutter.png', level: 2 },
-    { name: 'Android Studio', logoSrc: 'https://img.icons8.com/color/96/android-studio--v2.png', level: 2 },
-    { name: 'REST APIs', logoSrc: 'https://img.icons8.com/ios-filled/100/api-settings.png', level: 3 },
+    { name: 'React', icon: IconBrandReact, level: 4 },
+    { name: 'Next.js', icon: IconBrandNextjs, level: 3 },
+    { name: 'Node.js', icon: IconBrandNodejs, level: 3 },
+    { name: 'Tailwind CSS', icon: IconBrandTailwind, level: 4 },
+    { name: 'SCSS', icon: IconBrandSass, level: 3 },
+    { name: 'Flutter', icon: IconBrandFlutter, level: 2 },
+    { name: 'Android Studio', icon: IconBrandAndroid, level: 2 },
+    { name: 'REST APIs', icon: IconApi, level: 3 },
   ],
   'ML & Data Science': [
-    { name: 'Pandas', logoSrc: 'https://img.icons8.com/external-soft-fill-juicy-fish/60/external-pandas-coding-and-development-soft-fill-soft-fill-juicy-fish.png', level: 4 },
-    { name: 'Polars', logoSrc: 'https://img.icons8.com/color/96/polar-bear.png', level: 3 },
-    { name: 'PySpark', logoSrc: 'https://img.icons8.com/color/96/apache-spark.png', level: 2 },
-    { name: 'Databricks', logoSrc: 'https://img.icons8.com/color/96/databricks.png', level: 2 },
-    { name: 'R', logoSrc: 'https://img.icons8.com/ios-filled/100/r-project.png', level: 2 },
-    { name: 'SQL', logoSrc: 'https://img.icons8.com/ios-filled/100/sql.png', level: 3 },
-    { name: 'OpenAI SDK', logoSrc: 'https://img.icons8.com/color/96/openai.png', level: 2 },
-    { name: 'Model Context Protocol (MCP)', logoSrc: 'https://img.icons8.com/color/96/artificial-intelligence.png', level: 2 },
+    { name: 'Pandas', icon: IconChartBar, level: 4 },
+    { name: 'Polars', icon: IconSparkles, level: 3 },
+    { name: 'PySpark', icon: IconSparkles, level: 2 },
+    { name: 'Databricks', icon: IconBrandDatabricks, level: 2 },
+    { name: 'R', icon: IconCircleLetterR, level: 2 },
+    { name: 'SQL', icon: IconSql, level: 3 },
+    { name: 'OpenAI SDK', icon: IconBrandOpenai, level: 2 },
+    { name: 'Model Context Protocol (MCP)', icon: IconAi, level: 2 },
   ],
   'Tools & Platforms': [
-    { name: 'Git', logoSrc: 'https://img.icons8.com/ios-filled/100/git.png', level: 4 },
-    { name: 'GitHub', logoSrc: 'https://img.icons8.com/sf-regular-filled/96/github.png', level: 4 },
-    { name: 'VS Code', logoSrc: 'https://img.icons8.com/ios-filled/100/visual-studio.png', level: 5 },
-    { name: 'Cloud Databases', logoSrc: 'https://img.icons8.com/ios-filled/100/cloud.png', level: 3 },
-    { name: 'Agile/Scrum methodologies', logoSrc: 'https://img.icons8.com/ios-filled/100/scrum.png', level: 3 },
+    { name: 'Git', icon: IconBrandGit, level: 4 },
+    { name: 'GitHub', icon: IconBrandGithub, level: 4 },
+    { name: 'VS Code', icon: IconBrandVscode, level: 5 },
+    { name: 'Cloud Databases', icon: IconCloud, level: 3 },
+    { name: 'Agile/Scrum methodologies', icon: IconLayoutKanban, level: 3 },
   ],
 }
 
@@ -174,9 +198,9 @@ export const PROJECTS = [
     title: 'Data Analysis Dashboard',
     description: 'A dashboard visualizing data for 5 different convenience stores in Idaho.',
     skills: ['Python', 'Numpy', 'Pandas', 'Plotly', 'Scikit-learn', 'SQL', 'YAML', 'Quarto', 'Python Notebooks'],
-    imageSrc: getScreenshot('https://juan-zv.github.io/data-science-portfolio/'),
+    imageSrc: getScreenshot('https://app-challenge-wi26-hathaway-63286530215.us-west3.run.app/'),
     repository: 'https://github.com/juan-zv/data-science-portfolio/',
-    liveDemo: 'https://juan-zv.github.io/data-science-portfolio/',
+    liveDemo: 'https://app-challenge-wi26-hathaway-63286530215.us-west3.run.app/',
   },
   {
     id: 'movie-matching-webapp',

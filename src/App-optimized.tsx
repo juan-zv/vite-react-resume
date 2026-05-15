@@ -119,7 +119,6 @@ function App() {
                 <Skill
                   key={skill.name}
                   name={skill.name}
-                  logoSrc={skill.logoSrc}
                   level={skill.level}
                 />
               ))}
