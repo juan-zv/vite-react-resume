@@ -93,18 +93,13 @@ export default function ProjectCard({
         }
     }, [isImageOpen, closeModal])
 
-    const hoverAnimation = prefersReducedMotion
-        ? {}
-        : { scale: 1.02, y: -5 }
-
     return (
         <>
             <motion.div
-                whileHover={hoverAnimation}
                 transition={{ duration: 0.2 }}
                 className={cn("max-w-[450px] w-full h-full flex flex-col", className)}
             >
-                <Card className="h-full flex flex-col pt-0">
+                <Card className="h-full flex flex-col pt-0 hover:bg-muted hover:text-foreground transition-colors">
                     {/* Image as direct child of Card, before CardHeader (shadcn pattern) */}
                     {imageSrc && !imageError && (
                         <div

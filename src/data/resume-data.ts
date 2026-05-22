@@ -127,7 +127,7 @@ export const EXPERIENCES = [
 export const EDUCATION = {
   degree: 'Bachelor of Science in Computer Science',
   institution: 'Brigham Young University-Idaho',
-  dateRange: 'Apr 2022 – Apr 2026',
+  dateRange: 'Apr 2022 - Apr 2026',
   gpa: '3.8/4.0',
   description: [
     'Relevant Coursework: Machine Learning & Data Science, Full-Stack Web Development, Object-Oriented Programming, Parallel & Concurrent Programming, Database Systems & Design, Financial Accounting, Project Management, Product Development'
@@ -163,9 +163,9 @@ export const SKILLS = {
     { name: 'REST APIs', icon: IconApi, level: 3 },
   ],
   'ML & Data Science': [
-    { name: 'Pandas', icon: IconChartBar, level: 4 },
-    { name: 'Polars', icon: IconSparkles, level: 3 },
-    { name: 'PySpark', icon: IconSparkles, level: 2 },
+    { name: 'Pandas', icon: IconBrandPython, level: 4 },
+    { name: 'Polars', icon: IconBrandPython, level: 3 },
+    { name: 'PySpark', icon: IconBrandPython, level: 2 },
     { name: 'Databricks', icon: IconBrandDatabricks, level: 2 },
     { name: 'R', icon: IconCircleLetterR, level: 2 },
     { name: 'SQL', icon: IconSql, level: 3 },

@@ -195,7 +195,7 @@ function App() {
         <Section
           id="skills"
           title="Skills"
-          className="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-center items-stretch"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center"
         >
           {Object.entries(SKILLS).map(([category, skills]) => (
             <SkillSet key={category} title={category} skills={skills} />

@@ -20,7 +20,7 @@ type ExperienceCardProps = {
 
 function ExperienceCard({ title, institution, place, dateRange, description, responsibilities, className, gpa }: ExperienceCardProps) {
     return (
-        <motion.div whileHover={{ scale: 1.02, y: -5 }} transition={{ duration: 0.2 }} className={`mx-auto w-full h-full ${className}`}>
+        <motion.div transition={{ duration: 0.2 }} className={`mx-auto w-full h-full ${className}`}>
             <Card className="h-full">
                 <CardHeader className="text-center">
                     <CardTitle className="text-lg">{title}</CardTitle>
