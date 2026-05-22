@@ -1,4 +1,5 @@
 import { Progress } from "@/components/ui/progress"
+import { motion } from "motion/react";
 import type { ReactNode } from "react";
 
 type SkillProps = {
@@ -10,9 +11,15 @@ type SkillProps = {
 
 function Skill({ name, logoSrc, icon, level }: SkillProps) {
   return (
-    <div className="grid grid-cols-[50px_120px] gap-2 rounded-lg hover:bg-accent/50 transition-colors p-2">
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.3 }}
+      className="grid grid-cols-[50px_120px] gap-2 rounded-lg hover:bg-accent/50 transition-colors p-2 max-w-[200px] w-full mx-auto"
+      >
       {/* Left column: 50px wide, 50px tall for logo */}
-      <div className="w-full flex items-center justify-center text-foreground">
+      <div className="w-full h-full flex items-center justify-center text-foreground">
         {icon ? (
           icon
         ) : logoSrc ? (
@@ -29,7 +36,7 @@ function Skill({ name, logoSrc, icon, level }: SkillProps) {
         <span className="font-medium text-sm self-end">{name}</span>
         <Progress aria-label={`${name} level: ${level}/5`} className="w-full h-2 self-start" value={level ? level * 20 : 0} />
       </div>
-    </div>
+    </motion.div>
   );
 }
 
