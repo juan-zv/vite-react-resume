@@ -18,8 +18,6 @@ import {
   IconBrandAndroid,
   IconApi,
   // ML & Data Science
-  IconChartBar,
-  IconSparkles,
   IconBrandDatabricks,
   IconCircleLetterR,
   IconSql,
