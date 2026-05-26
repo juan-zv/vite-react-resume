@@ -35,14 +35,10 @@ export const PERSONAL_INFO = {
   name: 'Juan Zurita',
   title: 'Software Engineer | AI & ML Enthusiast',
   profileImage: './juan-zurita.webp',
-  about: `Hi! I'm Juan Zurita, a Computer Science student at BYU-Idaho. I was born in Bolivia 🇧🇴, but when I was 4 years old, my family moved to Spain 🇪🇸, where I grew up and have lived most of my life.
-I'm passionate about technology and AI, and I love creating anything that can have a real impact in the world. I enjoy learning a broad range of topics and I'm continuously looking for new challenges. I built this site to host my resume and showcase my design abilities.`,
+  about: `Computer Science graduate with a 3.8 GPA, undergraduate research experience in pathfinding algorithms, and a full-stack development background spanning React, Python, and cloud data tools. Seeking a software engineering or ML engineering role where strong fundamentals and cross-functional communication skills can drive real product impact.`,
   email: 'juanzurita@byui.edu',
   website: 'https://juanzurita.dev',
-  about2: `Hi! I'm Juan Zurita. I recently graduated from BYU-Idaho with a degree in Computer Science and a focus on Machine Learning. 
-        I built this space to share some of my projects and my resume. Thanks for stopping by, I'd love to connect!. 
-        My journey has taken me from Bolivia to Spain and back again, including two years of volunteer service that shaped how I approach teamwork and leadership.
-        I really enjoy the process of building—whether that's researching pathfinding algorithms, helping students as a TA, or developing full-stack tools with Python and React.        `
+  about2: `Computer Science graduate with a 3.8 GPA, undergraduate research experience in pathfinding algorithms, and a full-stack development background spanning React, Python, and cloud data tools. Seeking a software engineering or ML engineering role where strong fundamentals and cross-functional communication skills can drive real product impact.`,
 }
 
 export const SOCIAL_LINKS = [
@@ -77,7 +73,7 @@ export const EXPERIENCES = [
     dateRange: 'May 2025 - Jul 2025',
     description: [
       'Collaborated with faculty and graduate researchers to develop a hexagonal grid adaptation of the Jump Point Search (JPS) algorithm, contributing novel insights to pathfinding algorithm research.',
-      'Implemented Python simulations and demos to validate algorithmic behavior, improving team’s ability to evaluate performance on grid-based environments.',
+      'Implemented Python simulations and demos to validate algorithmic behavior, improving the team’s ability to evaluate performance on grid-based environments.',
       'Authored progress documentation and delivered technical presentations, strengthening cross-team knowledge sharing and research visibility.'
     ],
     responsibilities: [],
@@ -89,8 +85,8 @@ export const EXPERIENCES = [
     place: 'Rexburg, ID',
     dateRange: 'Apr 2024 - Apr 2026',
     description: [
-      'Assessed and provided actionable feedback on 100+ student assignments per week covering HTML, CSS, JavaScript, and responsive design principles.',
-      'Partnered with instructors to analyze student performance data and refine curriculum outcomes for WDD course offerings.',
+      'Assessed and provided actionable feedback on 100+ student assignments per week covering HTML, CSS, JavaScript, and responsive design principles; maintained short turnaround time allowing students to apply feedback.',
+      'Partnered with instructors to analyze student performance data and identify recurring misconceptions, leading to targeted instructions that reduced common error rates.',
       'Maintained grading consistency and rubric standards across a large student cohort, ensuring equitable and standards-aligned evaluation.'
     ],
     responsibilities: [],
@@ -102,9 +98,9 @@ export const EXPERIENCES = [
     place: 'Rexburg, ID',
     dateRange: 'Apr 2023 - Apr 2024',
     description: [
-      'Tutored 20-30 students in front-end development fundamentals including semantic HTML, CSS layouts, and vanilla JavaScript DOM manipulation.',
+      'Tutored 20-30 students in front-end development fundamentals including semantic HTML, CSS layouts, and vanilla JavaScript DOM manipulation, contributing to a measurable improvement in section pass rates.',
       'Diagnosed and resolved student coding issues, reducing debugging turnaround and boosting student confidence and course completion.',
-      'Fostered a collaborative learning environment by facilitating peer discussion, code reviews, and one-on-one mentoring sessions.'
+      'Developed automated grading tools using JavaScript that reduced per-assignment evaluation time allowing more time for high-quality feedback.'
     ],
     responsibilities: [],
   },
@@ -128,7 +124,7 @@ export const EDUCATION = {
   dateRange: 'Apr 2022 - Apr 2026',
   gpa: '3.8/4.0',
   description: [
-    'Relevant Coursework: Machine Learning & Data Science, Full-Stack Web Development, Object-Oriented Programming, Parallel & Concurrent Programming, Database Systems & Design, Financial Accounting, Project Management, Product Development'
+    'Relevant Coursework: Machine Learning & Data Science, Full-Stack Web Development, Object-Oriented Programming, Parallel & Concurrent Programming, Database Systems & Design, Massive Data Engineering.'
   ],
   coursework: [
     'Machine Learning & Data Science',
@@ -136,9 +132,7 @@ export const EDUCATION = {
     'Object-Oriented Programming',
     'Parallel & Concurrent Programming',
     'Database Systems & Design',
-    'Financial Accounting',
-    'Project Management',
-    'Product Development',
+    'Massive Data Engineering',
   ],
 }
 
