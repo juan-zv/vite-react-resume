@@ -74,27 +74,27 @@ function App() {
         <NavigationMenu className='mx-auto w-full md:w-auto'>
           <NavigationMenuList className='flex-col md:flex-row w-full'>
             <NavigationMenuItem className='w-full md:w-auto'>
-              <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'w-full md:w-max text-xl drop-shadow-md dark:bg-input/30 dark:hover:bg-accent')} href="#about">
+              <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'w-full md:w-max text-xl drop-shadow-md dark:bg-input/30')} href="#about">
                 About
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem className='w-full md:w-auto'>
-              <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'w-full md:w-max text-xl drop-shadow-md dark:bg-input/30 dark:hover:bg-accent')} href="#experience">
+              <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'w-full md:w-max text-xl drop-shadow-md dark:bg-input/30')} href="#experience">
                 Experience
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem className='w-full md:w-auto'>
-              <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'w-full md:w-max text-xl drop-shadow-md dark:bg-input/30 dark:hover:bg-accent')} href="#education">
+              <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'w-full md:w-max text-xl drop-shadow-md dark:bg-input/30')} href="#education">
                 Education
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem className='w-full md:w-auto'>
-              <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'w-full md:w-max text-xl drop-shadow-md dark:bg-input/30 dark:hover:bg-accent')} href="#skills">
+              <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'w-full md:w-max text-xl drop-shadow-md dark:bg-input/30')} href="#skills">
                 Skills
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem className='w-full md:w-auto'>
-              <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'w-full md:w-max text-xl drop-shadow-md dark:bg-input/30 dark:hover:bg-accent')} href="#projects">
+              <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'w-full md:w-max text-xl drop-shadow-md dark:bg-input/30')} href="#projects">
                 Projects
               </NavigationMenuLink>
             </NavigationMenuItem>
