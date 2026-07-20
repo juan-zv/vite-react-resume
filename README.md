@@ -8,12 +8,15 @@ This repository contains the source code for my personal resume website, built u
 - **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
 - **Shadcn UI**: A collection of accessible and customizable UI components for React.
 - **Icons8**: A source for high-quality icons used in the project.
+- **Lucide React**: A collection of free, open-source icons for React.
+- **Framer Motion**: A production-ready animation library for React.
 
 ## Features
 - **Responsive Design**: The website is fully responsive and works seamlessly on various devices and screen sizes.
 - **Dark/Light Mode**: Users can toggle between dark and light themes for a personalized experience.
 - **Smooth Scrolling**: The site features smooth scrolling for a more enjoyable navigation experience.
 - **Interactive Elements**: Various interactive elements enhance user engagement and showcase my skills.
+- **Animations**: The site features various animations to enhance the user experience.
 
 ## Link to the Website
 You can view the live website [Juan Zurita - Resume](https://juanzurita.dev/).

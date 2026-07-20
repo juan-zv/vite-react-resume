@@ -66,15 +66,28 @@ export const NAVIGATION_ITEMS = [
 
 export const EXPERIENCES = [
   {
+    id: 'seeusshine',
+    title: 'Web Developer - See Us Shine',
+    institution: 'See Us Shine - Nonprofit Organization',
+    place: 'Reno, NV (Remote)',
+    dateRange: 'Jun 2026 - Present',
+    description: [
+      'Architected and executed the migration of legacy data into a distributed system, implementing relational database principles to significantly improve scalability, data integrity, and administrative efficiency.',
+      'Refactored core provider registration workflows utilizing Wix and Velo/JavaScript, ensuring seamless, secure data ingestion directly into the new database system.',
+      'Accelerated development and testing cycles by leveraging AI-assisted coding and engineering custom JavaScript scripts for migration, testing and validation.',
+      'Established Git/GitHub version control workflows for the development team, establishing code review practices and streamlining collaborative feature deployment.'],
+    responsibilities: [],
+  },
+  {
     id: 'immerse',
     title: 'Undergraduate Researcher - Pathfinding Algorithms',
     institution: 'Brigham Young University (IMMERSE Program, MAGICC Lab)',
     place: 'Provo, UT',
     dateRange: 'May 2025 - Jul 2025',
     description: [
-      'Collaborated with faculty and graduate researchers to develop a hexagonal grid adaptation of the Jump Point Search (JPS) algorithm, contributing novel insights to pathfinding algorithm research.',
-      'Implemented Python simulations and demos to validate algorithmic behavior, improving the team’s ability to evaluate performance on grid-based environments.',
-      'Authored progress documentation and delivered technical presentations, strengthening cross-team knowledge sharing and research visibility.'
+      "Collaborated with faculty and graduate researchers to develop a hexagonal grid adaptation of the Jump Point Search (JPS) algorithm, contributing novel insights to pathfinding algorithm research.",
+      "Implemented Python simulations and demos to validate algorithmic behavior, improving the team's ability to evaluate performance on grid-based environments.",
+      "Authored progress documentation and delivered technical presentations, strengthening cross-team knowledge sharing and research visibility."
     ],
     responsibilities: [],
   },
@@ -195,7 +208,7 @@ export const PROJECTS = [
     repository: 'https://github.com/juan-zv/u-i-ride-alpha',
     liveDemo: 'https://u-i-ride-alpha.vercel.app/',
   },
-    {
+  {
     id: 'movie-matching-webapp',
     title: 'Movie Matching Web App',
     description: "A React + TypeScript web application for browsing movies, rating titles, and managing user access with Supabase authentication, featuring personalized movie recommendations and pair-based matching.",
