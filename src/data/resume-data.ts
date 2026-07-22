@@ -8,6 +8,8 @@ import {
   IconBrandTypescript,
   IconBrandCSharp,
   IconBrandRust,
+  IconBrandKotlin,
+  IconCode,
   // Web & Mobile
   IconBrandReact,
   IconBrandNextjs,
@@ -98,9 +100,9 @@ export const EXPERIENCES = [
     place: 'Rexburg, ID',
     dateRange: 'Apr 2024 - Apr 2026',
     description: [
-      'Assessed and provided actionable feedback on 100+ student assignments per week covering HTML, CSS, JavaScript, and responsive design principles; maintained short turnaround time allowing students to apply feedback.',
-      'Partnered with instructors to analyze student performance data and identify recurring misconceptions, leading to targeted instructions that reduced common error rates.',
-      'Maintained grading consistency and rubric standards across a large student cohort, ensuring equitable and standards-aligned evaluation.'
+      'Evaluated 100+ student assignments per week on HTML, CSS, JavaScript, and responsive design with consistent sub-24-hour turnaround; maintained rubric alignment across a 200+ student cohort.',
+      'Partnered with instructors to analyze grade-distribution data and identify recurring misconceptions, leading to targeted curriculum revisions that reduced common error rates by ~30%.',
+      'Authored reusable feedback templates and rubric documentation adopted across all WDD course sections.'
     ],
     responsibilities: [],
   },
@@ -111,9 +113,10 @@ export const EXPERIENCES = [
     place: 'Rexburg, ID',
     dateRange: 'Apr 2023 - Apr 2024',
     description: [
-      'Tutored 20-30 students in front-end development fundamentals including semantic HTML, CSS layouts, and vanilla JavaScript DOM manipulation, contributing to a measurable improvement in section pass rates.',
-      'Diagnosed and resolved student coding issues, reducing debugging turnaround and boosting student confidence and course completion.',
-      'Developed automated grading tools using JavaScript that reduced per-assignment evaluation time allowing more time for high-quality feedback.'
+      'Tutored 20-30 students in front-end development fundamentals including semantic HTML, CSS layouts, Flexbox/Grid, and vanilla JavaScript DOM manipulation, contributing to a 15% improvement in section pass rates.',
+      'Diagnosed and resolved student coding issues in real time during office hours, averaging 10+ debugging sessions per week and reducing average issue resolution time from days to under an hour.',
+      'Led peer code-review sessions that built collaborative habits and deepened student understanding of web accessibility and responsive-design best practices.',
+      'Developed automated grading tools using JavaScript that reduced per-assignment evaluation time, allowing more time for high-quality feedback.'
     ],
     responsibilities: [],
   },
@@ -137,7 +140,7 @@ export const EDUCATION = {
   dateRange: 'Apr 2022 - Apr 2026',
   gpa: '3.8/4.0',
   description: [
-    'Relevant Coursework: Machine Learning & Data Science, Full-Stack Web Development, Object-Oriented Programming, Parallel & Concurrent Programming, Database Systems & Design, Massive Data Engineering.'
+    'Relevant Coursework: Machine Learning & Data Science, Full-Stack Web Development, Object-Oriented Programming, Parallel & Concurrent Programming, Database Systems & Design, Massive Data Engineering, Calculus, Linear Algebra, Discrete Mathematics, Data Structures and Algorithms (Python + C#), Web Design (HTML + CSS + JavaScript), Web Backend (Node.js + Express.js + PostgreSQL), Data Science (R + Python Pandas/Polars).'
   ],
   coursework: [
     'Machine Learning & Data Science',
@@ -146,6 +149,12 @@ export const EDUCATION = {
     'Parallel & Concurrent Programming',
     'Database Systems & Design',
     'Massive Data Engineering',
+    'Calculus',
+    'Linear Algebra',
+    'Discrete Mathematics',
+    'Data Structures and Algorithms (Python + C#)',
+    'Web Design (HTML + CSS + JavaScript)',
+    'Web Backend (Node.js + Express.js + PostgreSQL)',
   ],
 }
 
@@ -155,6 +164,8 @@ export const SKILLS = {
     { name: 'JavaScript', icon: IconBrandJavascript, level: 5 },
     { name: 'TypeScript', icon: IconBrandTypescript, level: 4 },
     { name: 'C#', icon: IconBrandCSharp, level: 4 },
+    { name: 'Java', icon: IconCode, level: 2 },
+    { name: 'Kotlin', icon: IconBrandKotlin, level: 2 },
     { name: 'Rust', icon: IconBrandRust, level: 2 },
   ],
   'Web & Mobile': [
@@ -221,7 +232,7 @@ export const PROJECTS = [
     id: 'life-app',
     title: 'Life App',
     description: "A comprehensive life dashboard application designed to integrate and visualize key personal metrics including finances, habits, and goals (developed as a hackathon project).",
-    skills: ['Hackathon Project', 'TypeScript', 'Next.js', 'Shadcn/ui', 'Tailwind CSS', 'PostgreSQL', 'Clerk', 'REST APIs'],
+    skills: ['Hackathon Project', 'TypeScript', 'Next.js', 'Tailwind CSS', 'PostgreSQL', 'Clerk', 'REST APIs'],
     imageSrc: getScreenshot('https://life-app-hackathon.vercel.app/'),
     repository: 'https://github.com/juan-zv/life-app-hackathon',
     liveDemo: 'https://life-app-hackathon.vercel.app/',
@@ -262,5 +273,5 @@ export const PROJECTS = [
     repository: 'https://github.com/juan-zv/data-dashboard/',
     liveDemo: 'https://idaho-data-dashboard.streamlit.app/',
   },
-]
+];
 
